@@ -17,8 +17,8 @@
             </button>
             <nav class="utility-nav" id="utilityNav">
                 <div class="nav-primary">
-                    <a href="steganography.html#embed" class="nav-link no-reload" data-page="steganography" data-section="embed"> &lt;/ TOOL&gt;</a>
-                    <a href="steganography.html#learn" class="nav-link no-reload" data-page="steganography" data-section="learn"> &lt;/ LEARN&gt; </a>
+                    <a href="index.html#embed" class="nav-link no-reload" data-page="steganography" data-section="embed"> &lt;/ TOOL&gt;</a>
+                    <a href="index.html#learn" class="nav-link no-reload" data-page="steganography" data-section="learn"> &lt;/ LEARN&gt; </a>
                 </div>
                 <div class="nav-secondary">
                     <a href="help.html" class="nav-link no-reload" data-page="help"> &lt;/ HELP&gt;</a>
