@@ -15,7 +15,7 @@
             <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars"></i>
             </button>
-            <nav class="utility-nav" id="utilityNav">s
+            <nav class="utility-nav" id="utilityNav">
                 <div class="nav-primary">
                     <a href="index.html#embed" class="nav-link no-reload" data-page="steganography" data-section="embed"> &lt;/ TOOL&gt;</a>
                     <a href="index.html#learn" class="nav-link no-reload" data-page="steganography" data-section="learn"> &lt;/ LEARN&gt; </a>
