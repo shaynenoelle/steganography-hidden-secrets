@@ -19,6 +19,7 @@
     text-align: left;
     max-width: 1280px; /* Match header-content max-width */
     margin: 0 auto;
+    margin-left: 50px;
 }
 .hero-content {
     flex: 1;
@@ -124,7 +125,7 @@
 
 /* Container - Make it wider */
 .container {
-    max-width: 1280px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 40px;
     position: relative;
