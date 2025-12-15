@@ -1,5 +1,5 @@
 /* ============================================
-   ABOUT PAGE STYLES - FIXED SCROLL ANIMATIONS
+   ABOUT PAGE STYLES
    ============================================ */
 
 /* Hero Section with Dotted Background */
@@ -142,17 +142,6 @@
     padding: 100px 0;
     margin: 0;
     background: transparent;
-    
-    /* CRITICAL: Start hidden and far down */
-    opacity: 0;
-    transform: translateY(80px);
-    transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-                transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.who-section.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .who-section h2 {
@@ -186,18 +175,6 @@
     align-items: center;
     justify-content: center;
     min-height: 400px;
-    
-    /* Start hidden */
-    opacity: 0;
-    transform: translateX(-40px);
-    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.who-section.visible .who-image {
-    opacity: 1;
-    transform: translateX(0);
-    transition-delay: 0.2s;
 }
 
 .who-image img {
@@ -229,20 +206,6 @@
 }
 
 /* Text Content */
-.who-text {
-    /* Start hidden */
-    opacity: 0;
-    transform: translateX(40px);
-    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.who-section.visible .who-text {
-    opacity: 1;
-    transform: translateX(0);
-    transition-delay: 0.4s;
-}
-
 .who-text h3 {
     color: var(--accent-cyan);
     font-size: 1.8rem;
@@ -255,29 +218,6 @@
     font-size: 1rem;
     line-height: 1.8;
     margin-bottom: 20px;
-    
-    /* Individual paragraph animation */
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.who-section.visible .who-text p {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.who-section.visible .who-text p:nth-of-type(1) {
-    transition-delay: 0.5s;
-}
-
-.who-section.visible .who-text p:nth-of-type(2) {
-    transition-delay: 0.6s;
-}
-
-.who-section.visible .who-text p:nth-of-type(3) {
-    transition-delay: 0.7s;
 }
 
 /* ============ DEVELOPERS SECTION - GRID PATTERN BACKGROUND ============ */
@@ -304,17 +244,6 @@
     box-shadow: 
         inset 0 1px 0 rgba(0, 217, 255, 0.2),
         inset 0 -1px 0 rgba(0, 217, 255, 0.2);
-        
-    /* CRITICAL: Start hidden and far down */
-    opacity: 0;
-    transform: translateY(80px);
-    transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-                transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.developers-section.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .developers-section::before {
@@ -348,17 +277,6 @@
     font-family: var(--font-orbitron);
     text-align: center;
     margin-bottom: 24px;
-    
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.developers-section.visible h2 {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.2s;
 }
 
 .team-intro {
@@ -368,17 +286,6 @@
     max-width: 700px;
     margin: 0 auto 60px;
     line-height: 1.7;
-    
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.developers-section.visible .team-intro {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.3s;
 }
 
 /* ============ VALUES SECTION - PLAIN BACKGROUND ============ */
@@ -386,17 +293,6 @@
     padding: 100px 0;
     margin: 0;
     background: transparent;
-    
-    /* CRITICAL: Start hidden and far down */
-    opacity: 0;
-    transform: translateY(80px);
-    transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-                transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.values-section.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .values-section h2 {
@@ -405,17 +301,6 @@
     font-family: var(--font-orbitron);
     text-align: center;
     margin-bottom: 60px;
-    
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.values-section.visible h2 {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.2s;
 }
 
 .values-grid {
@@ -437,17 +322,6 @@
     overflow: hidden;
     text-align: center;
     backdrop-filter: blur(8px);
-    
-    /* CRITICAL: Start hidden and scaled down */
-    opacity: 0;
-    transform: translateY(50px) scale(0.95);
-    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.value-card.visible {
-    opacity: 1;
-    transform: translateY(0) scale(1);
 }
 
 /* Icon Container - Top Center */
@@ -511,28 +385,6 @@
     line-height: 1.7;
 }
 
-/* Team Grid */
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-}
-
-/* Buttery smooth staggered animation for cards */
-.dev-card,
-.value-card {
-    opacity: 0;
-    transform: translateY(50px) scale(0.95);
-    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.dev-card.visible,
-.value-card.visible {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-}
-
 /* Responsive */
 @media (max-width: 1024px) {
     .about-hero-content,
@@ -541,10 +393,6 @@
     .values-grid {
         padding-left: 24px;
         padding-right: 24px;
-    }
-    
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -579,10 +427,6 @@
     .values-grid {
         grid-template-columns: 1fr;
         gap: 20px;
-    }
-    
-    .team-grid {
-        grid-template-columns: 1fr;
     }
 }
 
@@ -734,4 +578,137 @@
     background: linear-gradient(135deg, rgba(0, 150, 200, 0.25), rgba(0, 180, 50, 0.25));
     border-color: #047857;
     box-shadow: 0 8px 30px rgba(0, 150, 200, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .about-hero-content,
+    .who-content,
+    .developers-section > *,
+    .values-grid {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+/* Ultra-smooth fade-up animations for sections - Cinematic Feel */
+.who-section,
+.developers-section,
+.values-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.who-section.visible,
+.developers-section.visible,
+.values-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Buttery smooth staggered animation for cards */
+.dev-card,
+.value-card {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.dev-card.visible,
+.value-card.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Smooth cascading animation for who-content children */
+.who-image,
+.who-text {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.who-section.visible .who-image,
+.who-section.visible .who-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.who-section.visible .who-image {
+    transition-delay: 0.15s;
+}
+
+.who-section.visible .who-text {
+    transition-delay: 0.3s;
+}
+
+/* Smooth fade for who-text children */
+.who-text h2,
+.who-text p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.who-section.visible .who-text h2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.4s;
+}
+
+.who-section.visible .who-text p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.who-section.visible .who-text p:nth-of-type(1) {
+    transition-delay: 0.5s;
+}
+
+.who-section.visible .who-text p:nth-of-type(2) {
+    transition-delay: 0.6s;
+}
+
+.who-section.visible .who-text p:nth-of-type(3) {
+    transition-delay: 0.7s;
+}
+
+/* Smooth team section header fade-in */
+.developers-section h2,
+.developers-section .team-intro {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.developers-section.visible h2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+.developers-section.visible .team-intro {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+
+/* Smooth values section header fade-in */
+.values-section h2 {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.values-section.visible h2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
 }
