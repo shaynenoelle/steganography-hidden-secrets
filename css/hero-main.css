@@ -14,14 +14,12 @@
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
-    padding: 80px 40px 60px; /* Reduced top padding + added horizontal padding */
+    padding: 120px 0 80px;
     position: relative;
     text-align: left;
-    max-width: 1400px; /* Increased for better centering */
+    max-width: 1280px; /* Match header-content max-width */
     margin: 0 auto;
-    width: 100%;
 }
-
 .hero-content {
     flex: 1;
     min-width: 450px;
@@ -124,9 +122,14 @@
     animation: bounce 2s infinite;
 }
 
-/* Container Override - Remove padding conflicts */
-body > .container {
-    padding: 0; /* Remove container padding for hero */
+/* Container - Make it wider */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+    flex: 1;
 }
 
 /* Header specific - keep it more compact */
