@@ -27,6 +27,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+
     <style>
       body {
         visibility: hidden;
@@ -364,35 +365,36 @@
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
-    <!-- Reusable Components -->
+    <!-- Reusable Components - ADD THESE -->
     <script src="components/header.js"></script>
     <script src="components/footer.js"></script>
 
     <!-- Mark body as loaded when everything is ready -->
     <script>
-        // Remove FOUC prevention as soon as possible
-        (function() {
-            function markAsLoaded() {
-                document.body.classList.add('loaded');
-            }
+      // Remove FOUC prevention as soon as possible
+      (function () {
+        function markAsLoaded() {
+          document.body.classList.add("loaded");
+        }
 
-            // If DOM is already loaded
-            if (document.readyState === 'interactive' || document.readyState === 'complete') {
-                markAsLoaded();
-            } else {
-                // Wait for DOM content
-                document.addEventListener('DOMContentLoaded', markAsLoaded);
-            }
-        })();
+        // If DOM is already loaded
+        if (
+          document.readyState === "interactive" ||
+          document.readyState === "complete"
+        ) {
+          markAsLoaded();
+        } else {
+          // Wait for DOM content
+          document.addEventListener("DOMContentLoaded", markAsLoaded);
+        }
+      })();
     </script>
-
+    
     <!-- JavaScript -->
     <script src="js/performance-fix.js" defer></script>
     <script src="js/ui.js" defer></script>
     <script src="js/scrollAnimation.js" defer></script>
     <script src="js/enhancements.js" defer></script>
-
-
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" title="Back to Top"></button>
 
