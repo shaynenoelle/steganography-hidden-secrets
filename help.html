@@ -27,6 +27,46 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <style>
+      body {
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.1s ease-in;
+      }
+
+      body.loaded {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #00d9ff, #7000ff);
+        z-index: 99999;
+        animation: loadingBar 1.5s ease-in-out infinite;
+      }
+
+      body.loaded::before {
+        display: none;
+      }
+
+      @keyframes loadingBar {
+        0% {
+          transform: translateX(-100%);
+        }
+        50% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Skip to Content (Accessibility) -->
@@ -191,7 +231,6 @@
     <section id="faq" class="faq-section">
       <h2><i class="fas fa-code"></i> Help & FAQ</h2>
       <div class="faq-container">
-        
         <!-- FAQ 1 -->
         <div class="faq-item">
           <div class="faq-question">
@@ -201,10 +240,10 @@
           <div class="faq-answer">
             <p>
               1. Go to the <strong>TOOL</strong> section and click the "Embed
-              Watermark" tab. 2. Upload your image (JPG or PNG, max 5MB). 3. Enter
-              your watermark text (up to 1000 characters). 4. Optionally, add a
-              password to encrypt the watermark. 5. Click "Generate Watermarked
-              Image" and download the result.
+              Watermark" tab. 2. Upload your image (JPG or PNG, max 5MB). 3.
+              Enter your watermark text (up to 1000 characters). 4. Optionally,
+              add a password to encrypt the watermark. 5. Click "Generate
+              Watermarked Image" and download the result.
             </p>
           </div>
         </div>
@@ -233,11 +272,11 @@
           </div>
           <div class="faq-answer">
             <p>
-              Yes! We use SHA-256 hashing with a random salt for each encryption.
-              The password is never stored or transmitted to any server. All
-              processing happens locally in your browser. However, this is for
-              educational purposes and should not be used for highly sensitive
-              data in production environments.
+              Yes! We use SHA-256 hashing with a random salt for each
+              encryption. The password is never stored or transmitted to any
+              server. All processing happens locally in your browser. However,
+              this is for educational purposes and should not be used for highly
+              sensitive data in production environments.
             </p>
           </div>
         </div>
@@ -251,8 +290,8 @@
           <div class="faq-answer">
             <p>
               We support JPG and PNG formats. PNG images are recommended as they
-              are lossless, meaning the watermark data is preserved perfectly. JPG
-              compression may slightly degrade the embedded data.
+              are lossless, meaning the watermark data is preserved perfectly.
+              JPG compression may slightly degrade the embedded data.
             </p>
           </div>
         </div>
@@ -265,9 +304,10 @@
           </div>
           <div class="faq-answer">
             <p>
-              The maximum watermark length is 1000 characters. The actual capacity
-              depends on your image size - larger images can hold longer
-              watermarks. Each character requires 8 bits of data in the image.
+              The maximum watermark length is 1000 characters. The actual
+              capacity depends on your image size - larger images can hold
+              longer watermarks. Each character requires 8 bits of data in the
+              image.
             </p>
           </div>
         </div>
@@ -311,8 +351,8 @@
           <div class="faq-answer">
             <p>
               No, the encryption is permanent. If you forget the password, the
-              watermark cannot be recovered. Make sure to save your password in a
-              secure location if needed later.
+              watermark cannot be recovered. Make sure to save your password in
+              a secure location if needed later.
             </p>
           </div>
         </div>
@@ -325,25 +365,45 @@
           </div>
           <div class="faq-answer">
             <p>
-              The watermark is fragile and may be lost or corrupted if the image is edited, resized, compressed, or converted to a different format. For best results, always keep the original watermarked image unchanged. Use copies for any editing or sharing purposes.
+              The watermark is fragile and may be lost or corrupted if the image
+              is edited, resized, compressed, or converted to a different
+              format. For best results, always keep the original watermarked
+              image unchanged. Use copies for any editing or sharing purposes.
             </p>
           </div>
         </div>
-
       </div>
     </section>
 
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
+    <!-- Reusable Components -->
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <!-- Mark body as loaded when everything is ready -->
+    <script>
+        // Remove FOUC prevention as soon as possible
+        (function() {
+            function markAsLoaded() {
+                document.body.classList.add('loaded');
+            }
+
+            // If DOM is already loaded
+            if (document.readyState === 'interactive' || document.readyState === 'complete') {
+                markAsLoaded();
+            } else {
+                // Wait for DOM content
+                document.addEventListener('DOMContentLoaded', markAsLoaded);
+            }
+        })();
+    </script>
+
     <!-- JavaScript -->
     <script src="js/performance-fix.js" defer></script>
     <script src="js/ui.js" defer></script>
     <script src="js/enhancements.js" defer></script>
 
-    <!-- Reusable Components -->
-    <script src="components/header.js"></script>
-    <script src="components/footer.js"></script>
 
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" title="Back to Top"></button>
@@ -417,22 +477,22 @@
         });
 
         // FAQ Accordion functionality
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        
-        faqQuestions.forEach(question => {
-          question.addEventListener('click', () => {
+        const faqQuestions = document.querySelectorAll(".faq-question");
+
+        faqQuestions.forEach((question) => {
+          question.addEventListener("click", () => {
             const faqItem = question.parentElement;
-            const isActive = faqItem.classList.contains('active');
-            
+            const isActive = faqItem.classList.contains("active");
+
             // Close all other FAQs (optional - remove if you want multiple open)
-            faqItems.forEach(item => {
+            faqItems.forEach((item) => {
               if (item !== faqItem) {
-                item.classList.remove('active');
+                item.classList.remove("active");
               }
             });
-            
+
             // Toggle current FAQ
-            faqItem.classList.toggle('active');
+            faqItem.classList.toggle("active");
           });
         });
       });
