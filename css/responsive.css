@@ -1,0 +1,331 @@
+/* ============ RESPONSIVE STYLES ============ */
+/* Media queries for all breakpoints */
+
+/* Large Tablets and Small Desktops */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 24px;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px;
+        min-height: auto;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-features {
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+    }
+
+    .hero-cta {
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+    }
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        max-width: 350px;
+    }
+
+    .hero-scroll-indicator {
+        display: none;
+    }
+
+    .header h1 {
+        font-size: clamp(2rem, 6vw, 3rem);
+    }
+
+    .main-card {
+        padding: 32px;
+    }
+
+    .image-comparison {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .faq-container {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .tab-btn {
+        width: 100%;
+    }
+
+    .main-card {
+        padding: 24px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Mobile Navigation */
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    /* Make header static on mobile (not sticky) */
+    .top-header {
+        position: relative !important;
+        top: auto !important;
+    }
+    
+    /* Remove top padding on mobile */
+    body.has-fixed-header,
+    .has-fixed-header {
+        padding-top: 0 !important;
+    }
+
+    .utility-nav {
+        position: absolute; /* Change from fixed to absolute */
+        top: 100%; /* Position directly below header */
+        left: 0;
+        right: 0;
+        background: var(--bg-secondary);
+        border-bottom: 1px solid var(--border-primary);
+        padding: 20px;
+        flex-direction: column;
+        gap: 12px;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+
+    .utility-nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        z-index: 2000;
+    }
+
+    .nav-primary,
+    .nav-secondary {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        border: none;
+    }
+
+    .nav-primary {
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--border-subtle);
+        border-right: none;
+    }
+
+    .nav-secondary {
+        padding-top: 12px;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        padding: 12px 16px;
+    }
+
+    .theme-toggle {
+        margin-top: 8px;
+    }
+
+    /* Hero Section Mobile */
+    .hero-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-features {
+        grid-template-columns: 1fr;  /* Changed from flex-direction: column */
+        align-items: center;
+        gap: 12px;
+    }
+
+    .hero-cta {
+        grid-template-columns: 1fr;  /* Changed from flex-direction: column */
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .hero-stat-divider {
+        width: 60px;
+        height: 1px;
+    }
+
+    .hero-visual {
+        display: none;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Video Demo Responsive */
+    .video-demo-section {
+        padding: 60px 20px;
+        margin: 60px 0;
+    }
+
+    .video-demo-title {
+        font-size: 1.8rem;
+    }
+
+    .demo-video-frame {
+        padding: 24px;
+        min-height: 300px;
+    }
+
+    .video-steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .step-visual {
+        height: 60px;
+    }
+
+    .step-icon {
+        font-size: 2rem;
+    }
+
+    .step-content h4 {
+        font-size: 0.85rem;
+    }
+
+    .step-content p {
+        font-size: 0.75rem;
+    }
+
+    /* Animation Optimizations */
+    [data-scroll] {
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .animate-fade-up,
+    .animate-slide-left,
+    .animate-slide-right,
+    .animate-scale,
+    .animate-rotate,
+    .animate-bounce-in {
+        animation-duration: 0.6s;
+    }
+
+    .info-item:nth-child(n) { animation-delay: 0.1s !important; }
+    .faq-item:nth-child(n) { animation-delay: 0.1s !important; }
+    .dev-card:nth-child(n) { animation-delay: 0.1s !important; }
+    .about-card:nth-child(n) { animation-delay: 0.1s !important; }
+
+
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 12px;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .main-card {
+        padding: 16px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+
+    .utility-nav {
+        gap: 12px;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .nav-link {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    /* Video Demo Mobile */
+    .video-demo-section {
+        padding: 40px 16px;
+    }
+
+    .video-demo-title {
+        font-size: 1.5rem;
+    }
+
+    .demo-video-frame {
+        padding: 16px;
+    }
+
+    .video-steps {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .step-visual {
+        height: 50px;
+    }
+
+    .step-icon {
+        font-size: 1.8rem;
+    }
+
+    .progress-dots {
+        gap: 8px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+}

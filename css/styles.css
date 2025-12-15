@@ -1,0 +1,229 @@
+﻿/* ============================================
+   HIDDEN SECRETS - MAIN STYLESHEET
+   ============================================
+   
+   This file imports all modular CSS files.
+   Edit individual files for easier maintenance:
+   
+   - base.css        -> Variables, fonts, reset, body styles
+   - layout.css      -> Header, navigation, footer
+   - components.css  -> Buttons, forms, cards, tabs
+   - sections.css    -> Page sections (Embed, Learn, Help, etc.)
+   - animations.css  -> Keyframes, scroll animations, transitions
+   - video-demo.css  -> Interactive video demo section
+   - enhancements.css-> Loading screen, theme toggle, modals, notifications
+   - responsive.css  -> Media queries for all breakpoints
+   
+   ============================================ */
+
+@import url('base.css');
+@import url('layout.css');
+@import url('components.css');
+@import url('sections.css');
+@import url('animations.css');
+@import url('video-demo.css');
+@import url('enhancements.css');
+@import url('responsive.css');
+
+/* Elements controlled by JavaScript should be hidden by default to prevent FOUC */
+.js-hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* How It Works Image + Text Layout */
+.how-step-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.how-step-row.reverse {
+    direction: rtl;
+}
+
+.how-step-row.reverse > * {
+    direction: ltr;
+}
+
+.step-image {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 217, 255, 0.15);
+    border: 1px solid var(--border-primary);
+}
+
+.step-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+}
+
+.step-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-lime));
+    color: var(--bg-primary);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    font-family: var(--font-orbitron);
+    box-shadow: 0 4px 20px rgba(0, 217, 255, 0.4);
+}
+
+.step-text h3 {
+    color: var(--accent-cyan);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-family: var(--font-orbitron);
+}
+
+.step-text p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.step-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.step-text ul li {
+    color: var(--text-secondary);
+    padding: 10px 0;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.step-text ul li i {
+    color: var(--accent-lime);
+    font-size: 0.9rem;
+}
+
+/* Tech Details Box */
+.tech-details-box {
+    background: rgba(21, 27, 47, 0.6);
+    border: 1px solid var(--border-primary);
+    border-radius: 16px;
+    padding: 50px;
+    margin-top: 60px;
+}
+
+.tech-details-box h3 {
+    text-align: center;
+    color: var(--accent-lime);
+    font-size: 2rem;
+    margin-bottom: 40px;
+    font-family: var(--font-orbitron);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.tech-item {
+    background: rgba(0, 217, 255, 0.05);
+    border: 1px solid rgba(0, 217, 255, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.tech-item h4 {
+    color: var(--accent-cyan);
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.tech-item p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .how-step-row {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Modal: limit overall height and keep header/footer visible; enable inner scrolling */
+.modal-content {
+    /* keep modals from growing beyond the viewport */
+    max-height: 80vh;
+    overflow: hidden; /* hide overflow on outer container */
+    display: flex;
+    flex-direction: column;
+}
+
+/* For content areas inside modals — make them scrollable */
+.modal-content .contact-content,
+.modal-content .legal-content,
+.modal-content .shortcuts-list,
+.modal-content .shortcuts-list + * {
+    overflow-y: auto;
+    /* calculate a comfortable scrolling area (adjust 120px if your modal has larger header/footer) */
+    max-height: calc(80vh - 120px);
+    padding-right: 8px; /* avoid content being hidden behind scrollbar */
+}
+
+/* Specific tweak for the contact modal if you want it a bit smaller */
+.contact-modal {
+    max-width: 640px;
+    width: 90%;
+    max-height: 70vh;
+}
+
+/* Optional: ensure modal-close stays visible when content scrolls */
+.modal-close {
+    z-index: 2;
+}
+
+/* Ensure focusable content remains accessible on small screens */
+@media (max-width: 480px) {
+    .contact-modal {
+        width: 95%;
+        max-height: 85vh;
+    }
+    .modal-content .contact-content {
+        max-height: calc(85vh - 110px);
+    }
+}
+
+/* Hide placeholders until loaded */
+#header-placeholder,
+#footer-placeholder {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+#header-placeholder.loaded,
+#footer-placeholder.loaded {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Prevent layout shift */
+#header-placeholder { min-height: 80px; }
+#footer-placeholder { min-height: 60px; }
+
+

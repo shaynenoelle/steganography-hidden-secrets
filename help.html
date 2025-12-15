@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help & Documentation - Hidden Secrets</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Complete guide to using Hidden Secrets effectively, troubleshooting, and FAQs."
+    />
+    <meta
+      name="keywords"
+      content="steganography help, watermark guide, Hidden Secrets FAQ"
+    />
+    <meta name="author" content="Hidden Secrets Team" />
+
+    <!-- Security -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/alternate-sections.css" />
+    <link rel="stylesheet" href="css/help-page.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Skip to Content (Accessibility) -->
+    <a href="#how-it-works" class="skip-link">Skip to main content</a>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Toast Notifications Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Floating Particles (OPTIMIZED - Only 6) -->
+    <div class="particles-container" id="particles">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+
+    <!-- Top Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section with Dotted Background -->
+    <section class="help-hero-section">
+      <div class="help-hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-question-circle"></i> Support & FAQ
+        </div>
+        <h1 class="hero-title">
+          Help & <span class="gradient-text">Documentation</span>
+        </h1>
+        <p class="hero-description">
+          Complete guide to using Hidden Secrets effectively, troubleshooting,
+          and FAQs.
+        </p>
+      </div>
+
+      <!-- Scroll Down Indicator -->
+      <div class="scroll-indicator" id="scrollIndicator">
+        <span>Scroll Down</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- How It Works Section - Plain Background -->
+      <section id="how-it-works" class="how-it-works-section">
+        <h2><i class="fas fa-code"></i> How It Works</h2>
+
+        <!-- Step 1 - Image Right -->
+        <div class="how-step-row" data-step="1">
+          <div class="step-text">
+            <h3><i class="fas fa-upload"></i> 01. Upload Your Image</h3>
+            <p>
+              Select any JPG or PNG image (max 5MB). The tool works with both
+              compressed and lossless formats. Your image is processed entirely
+              in your browser—no server upload required.
+            </p>
+            <ul>
+              <li><i class="fas fa-check"></i> Supports JPG, PNG formats</li>
+              <li><i class="fas fa-check"></i> Maximum file size: 5MB</li>
+              <li><i class="fas fa-check"></i> 100% client-side processing</li>
+            </ul>
+          </div>
+          <div class="step-image">
+            <img
+              src="assets/images/step1.png"
+              alt="Step 1: Upload Image"
+              loading="lazy"
+            />
+            <div class="step-badge">Step 1</div>
+          </div>
+        </div>
+
+        <!-- Step 2 - Image Left -->
+        <div class="how-step-row" data-step="2">
+          <div class="step-image">
+            <img
+              src="assets/images/step2.png"
+              alt="Step 2: Enter Watermark"
+              loading="lazy"
+            />
+            <div class="step-badge">Step 2</div>
+          </div>
+          <div class="step-text">
+            <h3><i class="fas fa-pen-fancy"></i> 02. Enter Your Watermark</h3>
+            <p>
+              Type your secret message, copyright information, or authentication
+              data (up to 1000 characters). This text will be invisibly embedded
+              into the image pixels using LSB steganography.
+            </p>
+            <ul>
+              <li>
+                <i class="fas fa-check"></i> Up to 1000 characters supported
+              </li>
+              <li><i class="fas fa-check"></i> Invisible to human eye</li>
+              <li>
+                <i class="fas fa-check"></i> Perfect for copyright protection
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Step 3 - Image Right -->
+        <div class="how-step-row" data-step="3">
+          <div class="step-text">
+            <h3>
+              <i class="fas fa-shield-alt"></i> 03. Secure with Password
+              (Optional)
+            </h3>
+            <p>
+              Add an extra layer of security by encrypting your watermark with
+              SHA-256 encryption. Only those with the correct password can
+              extract your hidden message.
+            </p>
+            <ul>
+              <li><i class="fas fa-check"></i> SHA-256 encryption</li>
+              <li><i class="fas fa-check"></i> Random salt generation</li>
+              <li><i class="fas fa-check"></i> Military-grade security</li>
+            </ul>
+          </div>
+          <div class="step-image">
+            <img
+              src="assets/images/step3.png"
+              alt="Step 3: Add Password"
+              loading="lazy"
+            />
+            <div class="step-badge">Step 3</div>
+          </div>
+        </div>
+
+        <!-- Step 4 - Image Left -->
+        <div class="how-step-row" data-step="4">
+          <div class="step-image">
+            <img
+              src="assets/images/step4.png"
+              alt="Step 4: Download"
+              loading="lazy"
+            />
+            <div class="step-badge">Step 4</div>
+          </div>
+          <div class="step-text">
+            <h3><i class="fas fa-download"></i> 04. Download & Extract</h3>
+            <p>
+              Download your watermarked image instantly. Later, you can upload
+              it back to extract the hidden watermark. The process is completely
+              reversible with the correct password (if used).
+            </p>
+            <ul>
+              <li><i class="fas fa-check"></i> Instant download as PNG</li>
+              <li><i class="fas fa-check"></i> Lossless extraction</li>
+              <li><i class="fas fa-check"></i> Verify ownership anytime</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- FAQ Section - Grid Pattern Background - ACCORDION STYLE -->
+    <section id="faq" class="faq-section">
+      <h2><i class="fas fa-code"></i> Help & FAQ</h2>
+      <div class="faq-container">
+        
+        <!-- FAQ 1 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>How do I embed a watermark into an image?</h3>
+            <i class="fas fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              1. Go to the <strong>TOOL</strong> section and click the "Embed
+              Watermark" tab. 2. Upload your image (JPG or PNG, max 5MB). 3. Enter
+              your watermark text (up to 1000 characters). 4. Optionally, add a
+              password to encrypt the watermark. 5. Click "Generate Watermarked
+              Image" and download the result.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>How do I extract a watermark from an image?</h3>
+            <i class="fas fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              1. Go to the <strong>TOOL</strong> section and click the "Extract
+              Watermark" tab. 2. Upload your watermarked image. 3. If the
+              watermark was encrypted with a password, enter the password. 4.
+              Click "Extract Watermark" and the hidden message will appear.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Is my password secure?</h3>
+            <i class="fas fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Yes! We use SHA-256 hashing with a random salt for each encryption.
+              The password is never stored or transmitted to any server. All
+              processing happens locally in your browser. However, this is for
+              educational purposes and should not be used for highly sensitive
+              data in production environments.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What image formats are supported?</h3>
+            <i class="fas fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              We support JPG and PNG formats. PNG images are recommended as they
+              are lossless, meaning the watermark data is preserved perfectly. JPG
+              compression may slightly degrade the embedded data.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What's the maximum watermark length?</h3>
+            <i class="fas fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              The maximum watermark length is 1000 characters. The actual capacity
+              depends on your image size - larger images can hold longer
+              watermarks. Each character requires 8 bits of data in the image.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Can I use the same image multiple times?</h3>
+            <i class="fas fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              You can, but each embedding will overwrite the previous watermark.
+              If you need to embed multiple watermarks, you'll need to use
+              different images or start with the original image each time.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 7 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Is there a file size limit?</h3>
+            <i class="fas fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Yes, the maximum file size is 5MB. This ensures fast processing in
+              your browser. Larger files may cause performance issues on some
+              devices.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 8 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Can I recover a watermark if I forget the password?</h3>
+            <i class="fas fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              No, the encryption is permanent. If you forget the password, the
+              watermark cannot be recovered. Make sure to save your password in a
+              secure location if needed later.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 9 - NEW -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Does the watermark survive image editing?</h3>
+            <i class="fas fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              The watermark is fragile and may be lost or corrupted if the image is edited, resized, compressed, or converted to a different format. For best results, always keep the original watermarked image unchanged. Use copies for any editing or sharing purposes.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JavaScript -->
+    <script src="js/performance-fix.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/enhancements.js" defer></script>
+
+    <!-- Reusable Components -->
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" title="Back to Top"></button>
+
+    <!-- Scroll Animation Script -->
+    <script>
+      // Scroll indicator click handler
+      document.addEventListener("DOMContentLoaded", () => {
+        const scrollIndicator = document.getElementById("scrollIndicator");
+        const howItWorksSection = document.getElementById("how-it-works");
+
+        scrollIndicator.addEventListener("click", () => {
+          howItWorksSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        });
+
+        // Hide scroll indicator after scrolling down
+        let lastScroll = 0;
+        window.addEventListener("scroll", () => {
+          const currentScroll = window.pageYOffset;
+          if (currentScroll > 200) {
+            scrollIndicator.style.opacity = "0";
+            scrollIndicator.style.pointerEvents = "none";
+          } else {
+            scrollIndicator.style.opacity = "1";
+            scrollIndicator.style.pointerEvents = "auto";
+          }
+        });
+
+        // Lazy load animation for How It Works steps
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.15,
+        };
+
+        const stepObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                entry.target.classList.add("visible");
+              }, index * 100);
+              stepObserver.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        // Observe all step rows
+        const stepRows = document.querySelectorAll(".how-step-row");
+        stepRows.forEach((row) => {
+          stepObserver.observe(row);
+        });
+
+        // Observe FAQ items
+        const faqItems = document.querySelectorAll(".faq-item");
+        faqItems.forEach((item, index) => {
+          const faqObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                setTimeout(() => {
+                  entry.target.classList.add("visible");
+                }, index * 80);
+                faqObserver.unobserve(entry.target);
+              }
+            });
+          }, observerOptions);
+
+          faqObserver.observe(item);
+        });
+
+        // FAQ Accordion functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+          question.addEventListener('click', () => {
+            const faqItem = question.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all other FAQs (optional - remove if you want multiple open)
+            faqItems.forEach(item => {
+              if (item !== faqItem) {
+                item.classList.remove('active');
+              }
+            });
+            
+            // Toggle current FAQ
+            faqItem.classList.toggle('active');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,569 @@
+/* ============================================
+   ALTERNATING SECTION BACKGROUNDS WITH PATTERNS
+   ============================================ */
+
+/* Base full-width section wrapper */
+.section-wrapper {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+/* Inner content container - keeps content centered */
+.section-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* ============ WATERMARK TOOL SECTION - GRID PATTERN ============ */
+.tool-section {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+    /* Grid pattern background */
+    background-color: rgba(8, 12, 28, 0.9);
+    background-image: 
+        linear-gradient(rgba(0, 217, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 217, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    
+    border-top: 1px solid rgba(0, 217, 255, 0.3);
+    border-bottom: 1px solid rgba(0, 217, 255, 0.3);
+    
+    padding: 100px 0;
+    margin-top: 120px;
+    margin-bottom: 0;
+    
+    box-shadow: 
+        inset 0 1px 0 rgba(0, 217, 255, 0.2),
+        inset 0 -1px 0 rgba(0, 217, 255, 0.2);
+}
+
+/* Grid overlay effect */
+.tool-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg, 
+        rgba(0, 217, 255, 0.05) 0%, 
+        transparent 50%, 
+        rgba(0, 255, 65, 0.05) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Keep content centered and above overlay */
+.tool-section > * {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Large heading for Watermark Tool */
+.tool-section .header h2 {
+    color: var(--accent-cyan);
+    font-size: 2.5rem;
+    font-family: var(--font-orbitron);
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.tool-section .header p {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+/* ============ LEARN SECTION - DOTTED GRID PATTERN ============ */
+.learn-section {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+    /* Background with dotted pattern */
+    background-color: rgba(10, 14, 25, 0.7);
+    background-image: 
+        radial-gradient(circle, rgba(0, 217, 255, 0.15) 1px, transparent 1px),
+        radial-gradient(circle, rgba(0, 255, 65, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px, 60px 60px;
+    background-position: 0 0, 20px 20px;
+    
+    border-top: 1px solid rgba(0, 217, 255, 0.3);
+    border-bottom: 1px solid rgba(0, 217, 255, 0.3);
+    
+    padding: 100px 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    
+    box-shadow: 
+        inset 0 1px 0 rgba(0, 217, 255, 0.2),
+        inset 0 -1px 0 rgba(0, 217, 255, 0.2);
+}
+
+/* Add animated gradient overlay */
+.learn-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg, 
+        rgba(0, 217, 255, 0.03) 0%, 
+        transparent 50%, 
+        rgba(0, 255, 65, 0.03) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Keep content centered and above overlay */
+.learn-section > * {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.learn-section h2 {
+    color: var(--accent-cyan);
+    font-size: 2.5rem;
+    font-family: var(--font-orbitron);
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Info Item Cards - Icon at Top Center */
+.info-item {
+    background: rgba(15, 22, 40, 0.8);
+    border: 1px solid rgba(0, 217, 255, 0.2);
+    border-radius: 16px;
+    padding: 40px 28px 28px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: slideInUp 0.6s ease-out;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    backdrop-filter: blur(8px);
+}
+
+/* Icon Container - Top Center */
+.info-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.15), rgba(0, 255, 65, 0.15));
+    border: 2px solid rgba(0, 217, 255, 0.3);
+    border-radius: 20px;
+    font-size: 2rem;
+    color: var(--accent-cyan);
+    transition: all 0.4s ease;
+}
+
+.info-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-lime));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.info-item:hover {
+    border-color: var(--accent-cyan);
+    background: rgba(0, 217, 255, 0.12);
+    transform: translateY(-8px);
+    box-shadow: 
+        0 12px 40px rgba(0, 217, 255, 0.25),
+        0 0 60px rgba(0, 217, 255, 0.15);
+}
+
+.info-item:hover::before {
+    opacity: 1;
+}
+
+.info-item:hover .info-icon {
+    transform: scale(1.1) rotateY(180deg);
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.25), rgba(0, 255, 65, 0.25));
+    border-color: var(--accent-lime);
+    box-shadow: 0 8px 30px rgba(0, 217, 255, 0.4);
+}
+
+.info-item h3 {
+    color: var(--accent-cyan);
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.info-item p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* ============ STATS SECTION - NO BACKGROUND (PLAIN) ============ */
+.stats-section {
+    padding: 80px 0;
+    margin: 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+    /* Plain background - no pattern */
+    background: transparent;
+    
+    /* Ensure content is centered */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Stats Grid - Full Width Centered */
+.stats-section .stats-grid,
+.stats-section > .stats-grid {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 32px 24px;
+    background: rgba(10, 14, 39, 0.6);
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.stat-item:hover {
+    transform: translateY(-4px);
+    background: rgba(0, 255, 65, 0.08);
+    border-color: var(--accent-lime);
+    box-shadow: 0 8px 30px rgba(0, 255, 65, 0.2);
+}
+
+/* ============ VIDEO DEMO - CIRCUIT FLOW PATTERN ============ */
+.video-demo-section {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    
+    /* Dark base with circuit pattern */
+    background-color: rgba(8, 12, 28, 0.95);
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 217, 255, 0.03) 2px,
+            rgba(0, 217, 255, 0.03) 4px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 217, 255, 0.03) 2px,
+            rgba(0, 217, 255, 0.03) 4px
+        );
+    background-size: 30px 30px;
+    
+    border-top: 1px solid rgba(0, 217, 255, 0.4);
+    border-bottom: 1px solid rgba(0, 217, 255, 0.4);
+    
+    box-shadow: 
+        inset 0 2px 0 rgba(0, 217, 255, 0.2),
+        inset 0 -2px 0 rgba(0, 217, 255, 0.2),
+        0 0 100px rgba(0, 217, 255, 0.1);
+}
+
+.video-demo-section .video-demo-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ============ LSB VISUAL SECTION - NO BACKGROUND (PLAIN) ============ */
+.lsb-visual-section {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+    /* Plain background - no pattern */
+    background: transparent;
+    
+    padding: 100px 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.lsb-visual-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Image on LEFT, Content on RIGHT */
+.lsb-image {
+    order: 1;
+}
+
+.lsb-content {
+    order: 2;
+}
+
+/* Image fills more space, reduced gray border */
+.lsb-image {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 217, 255, 0.2);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    background: rgba(10, 14, 39, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.lsb-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 16px;
+    
+    /* Increase contrast */
+    mix-blend-mode: screen;
+    transition: all 0.4s ease;
+}
+
+.lsb-content h3 {
+    color: var(--accent-cyan);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: var(--font-orbitron);
+}
+
+.lsb-content p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+/* Reduced line spacing in list */
+.lsb-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lsb-content ul li {
+    color: var(--text-secondary);
+    padding: 8px 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.lsb-content ul li i {
+    color: var(--accent-lime);
+    font-size: 0.9rem;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.lsb-content ul li span {
+    flex: 1;
+}
+
+/* ============ LIGHT THEME SUPPORT ============ */
+[data-theme="light"] .tool-section {
+    background-color: rgba(240, 245, 250, 0.95);
+    background-image: 
+        linear-gradient(rgba(0, 150, 200, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 150, 200, 0.15) 1px, transparent 1px);
+    border-color: rgba(0, 150, 200, 0.3);
+}
+
+[data-theme="light"] .learn-section {
+    background-color: rgba(245, 248, 252, 0.95);
+    background-image: 
+        radial-gradient(circle, rgba(0, 150, 200, 0.12) 1px, transparent 1px),
+        radial-gradient(circle, rgba(0, 180, 50, 0.08) 1px, transparent 1px);
+    border-color: rgba(0, 150, 200, 0.3);
+    box-shadow: 
+        inset 0 1px 0 rgba(0, 150, 200, 0.2),
+        inset 0 -1px 0 rgba(0, 150, 200, 0.2);
+}
+
+[data-theme="light"] .video-demo-section {
+    background-color: rgba(235, 240, 245, 0.95);
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 150, 200, 0.08) 2px, rgba(0, 150, 200, 0.08) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 150, 200, 0.08) 2px, rgba(0, 150, 200, 0.08) 4px);
+    border-color: rgba(0, 150, 200, 0.3);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1024px) {
+    .tool-section > *,
+    .learn-section > *,
+    .section-inner {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    
+    .lsb-visual-container {
+        padding: 0 24px;
+        gap: 40px;
+    }
+    
+    .stats-section .stats-grid,
+    .stats-section > .stats-grid {
+        padding: 0 24px;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tool-section {
+        padding: 60px 0;
+        margin-top: 80px;
+    }
+    
+    .learn-section {
+        padding: 60px 0;
+    }
+    
+    .stats-section {
+        padding: 60px 0;
+    }
+    
+    .lsb-visual-section {
+        padding: 60px 0;
+    }
+    
+    .lsb-visual-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .tool-section > *,
+    .learn-section > *,
+    .section-inner,
+    .lsb-visual-container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    
+    .tool-section .header h2,
+    .learn-section h2 {
+        font-size: 2rem;
+    }
+    
+    .lsb-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .lsb-content ul li {
+        padding: 6px 0;
+    }
+    
+    .stats-section .stats-grid,
+    .stats-section > .stats-grid {
+        padding: 0 16px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-section .stats-grid,
+    .stats-section > .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .info-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin-bottom: 16px;
+    }
+    
+    .info-item {
+        padding: 32px 20px 20px;
+    }
+    
+    .tool-section .header h2,
+    .learn-section h2 {
+        font-size: 1.75rem;
+    }
+}

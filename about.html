@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Hidden Secrets</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Meet the team behind Hidden Secrets and learn about our mission to make cryptography accessible."
+    />
+    <meta
+      name="keywords"
+      content="steganography team, cryptography developers, Hidden Secrets about"
+    />
+    <meta name="author" content="Hidden Secrets Team" />
+
+    <!-- Security -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/alternate-sections.css" />
+    <link rel="stylesheet" href="css/about-page.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Skip to Content (Accessibility) -->
+    <a href="#who-is" class="skip-link">Skip to main content</a>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Toast Notifications Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Floating Particles (OPTIMIZED - Only 6) -->
+    <div class="particles-container" id="particles">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+
+    <!-- Top Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section with Dotted Background -->
+    <section class="about-hero-section">
+      <div class="about-hero-content">
+        <div class="hero-badge"><i class="fas fa-users"></i> Our Story</div>
+        <h1 class="hero-title">
+          About <span class="gradient-text">Hidden Secrets</span>
+        </h1>
+        <p class="hero-description">
+          Empowering everyone to understand and use digital steganography
+          through education, innovation, and open-source technology.
+        </p>
+      </div>
+
+      <!-- Scroll Down Indicator -->
+      <div class="scroll-indicator" id="scrollIndicator">
+        <span>Scroll Down</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- Who is Hidden Secrets Section - Plain Background -->
+      <section id="who-is" class="who-section">
+        <div class="who-content">
+          <!-- Image Placeholder (LEFT) -->
+          <div class="who-image">
+            <!-- REPLACE THIS PLACEHOLDER WITH YOUR IMAGE -->
+            <img
+              src="assets/images/LSB.jpg"
+              alt="Hidden Secrets"
+              style="display: none"
+              id="aboutImage"
+            />
+            <div class="who-image-placeholder" id="imagePlaceholder">
+              <i class="fas fa-image"></i>
+              <p>
+                Image Placeholder<br /><small>Replace with your image</small>
+              </p>
+            </div>
+          </div>
+
+          <!-- Text Content (RIGHT) -->
+          <div class="who-text">
+            <h2><i class="fas fa-code"></i> Who is Hidden Secrets?</h2>
+            <p>
+              Hidden Secrets is a free, open-source web application for digital
+              watermarking and steganography. It allows you to embed hidden
+              messages into images and extract them later - all within your
+              browser, with no server involvement.
+            </p>
+            <p>
+              We believe in making cryptography and steganography accessible to
+              everyone. Whether you're an artist protecting your work, a
+              researcher exploring steganography, or someone curious about
+              digital security, this tool is for you.
+            </p>
+            <p>
+              In an increasingly digital world, the ability to protect your
+              creative work and maintain privacy is essential. Hidden Secrets
+              empowers you to add an extra layer of security to your images,
+              embedding copyright information, authentication markers, or secret
+              messages that only you can retrieve.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Developers Section - Grid Pattern Background -->
+      <section id="developers" class="developers-section">
+        <h2><i class="fas fa-code"></i> Meet Our Elite Team</h2>
+        <p class="team-intro">
+          Hidden Secrets was created by a passionate team of developers
+          dedicated to making cryptography and steganography accessible to
+          everyone.
+        </p>
+
+        <div class="team-grid">
+          <div class="dev-card team-card" data-scroll="bounce" data-delay="0.1">
+            <div class="team-photo">
+              <img
+                src="assets/devprofileimages/developer1.jpg"
+                alt="Prince Joshua Ngojo"
+                class="dev-image"
+                loading="lazy"
+              />
+            </div>
+            <h3>Prince Joshua Ngojo</h3>
+            <p class="role">Developer</p>
+            <p class="bio">
+              Passionate about cryptography and web technologies. Spearheaded
+              the LSB steganography implementation and overall architecture
+              design.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://github.com/josh-amir"
+                class="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-github"></i> GitHub</a
+              >
+              <a
+                href="https://ph.linkedin.com/in/prince-joshua-ngojo-8737b2314"
+                class="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-linkedin"></i> LinkedIn</a
+              >
+            </div>
+          </div>
+
+          <div class="dev-card team-card" data-scroll="bounce" data-delay="0.2">
+            <div class="team-photo">
+              <img
+                src="assets/devprofileimages/developer2.jpg"
+                alt="Daisy Mae Lascuna"
+                class="dev-image"
+                loading="lazy"
+              />
+            </div>
+            <h3>Daisy Mae Lascuña</h3>
+            <p class="role">Developer</p>
+            <p class="bio">
+              UI/UX specialist with expertise in modern web design. Created the
+              beautiful, responsive interface and professional styling you see
+              today.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://github.com/daiszemi16"
+                class="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-github"></i> GitHub</a
+              >
+              <a
+                href="https://www.facebook.com/daisymae.lascuna"
+                class="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-facebook"></i> Facebook</a
+              >
+            </div>
+          </div>
+
+          <div class="dev-card team-card" data-scroll="bounce" data-delay="0.3">
+            <div class="team-photo">
+              <img
+                src="assets/devprofileimages/developer3.jpg"
+                alt="Juliana Eltagonde"
+                class="dev-image"
+                loading="lazy"
+              />
+            </div>
+            <h3>Juliana Eltagonde</h3>
+            <p class="role">Developer</p>
+            <p class="bio">
+              Focused on encryption and cryptographic best practices.
+              Implemented SHA-256 hashing, password validation, and security
+              features throughout the application.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://github.com/julieee16"
+                class="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-github"></i> GitHub</a
+              >
+              <a
+                href="https://www.facebook.com/juliana.eltagonde.2025"
+                class="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-facebook"></i> Facebook</a
+              >
+            </div>
+          </div>
+
+          <div class="dev-card team-card" data-scroll="bounce" data-delay="0.4">
+            <div class="team-photo">
+              <img
+                src="assets/devprofileimages/developer4.jpg"
+                alt="Shayne Noelle Bangcailan"
+                class="dev-image"
+                loading="lazy"
+              />
+            </div>
+            <h3>Shayne Noelle Bangcailan</h3>
+            <p class="role">Developer</p>
+            <p class="bio">
+              Ensures quality across all aspects of the project. Handles
+              testing, optimization, documentation, and ensures smooth
+              integration of all components.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://github.com/shaynenoelle"
+                class="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-github"></i> GitHub</a
+              >
+              <a
+                href="https://ph.linkedin.com/in/shayne-noelle-bangcailan-70662b271"
+                class="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-linkedin"></i> LinkedIn</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Core Values Section - Plain Background -->
+      <section id="values" class="values-section">
+        <h2><i class="fas fa-code"></i> Our Core Values</h2>
+        <div class="values-grid">
+          <div class="value-card" data-scroll="fade-up" data-delay="0.2">
+            <div class="value-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Privacy & Security</h3>
+            <p>
+              Your data belongs to you. All processing happens locally in your
+              browser - we never store, collect, or transmit your images or
+              watermarks to any server.
+            </p>
+          </div>
+
+          <div class="value-card" data-scroll="fade-up" data-delay="0.3">
+            <div class="value-icon">
+              <i class="fas fa-code-branch"></i>
+            </div>
+            <h3>Open Source</h3>
+            <p>
+              Transparency is key. Our code is open for everyone to inspect,
+              learn from, and contribute to. We believe in the power of
+              collaborative development.
+            </p>
+          </div>
+
+          <div class="value-card" data-scroll="fade-up" data-delay="0.4">
+            <div class="value-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Accessibility</h3>
+            <p>
+              Technology should be for everyone. We design with accessibility in
+              mind, ensuring our tools are usable by people of all skill levels
+              and abilities.
+            </p>
+          </div>
+
+          <div class="value-card" data-scroll="fade-up" data-delay="0.5">
+            <div class="value-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Innovation</h3>
+            <p>
+              We constantly explore new ways to improve digital security and
+              privacy, pushing the boundaries of what's possible with
+              browser-based cryptography.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JavaScript -->
+    <script src="js/performance-fix.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/scrollAnimation.js" defer></script>
+    <script src="js/enhancements.js" defer></script>
+
+    <!-- Reusable Components -->
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" title="Back to Top"></button>
+
+    <!-- Add this script at the bottom of about.html, just before </body> -->
+
+    <!-- Scroll Animation Script for About Page -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Respect user's motion preferences
+        if (
+          window.matchMedia &&
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ) {
+          document
+            .querySelectorAll(
+              ".who-section, .developers-section, .values-section, .dev-card, .value-card"
+            )
+            .forEach((el) => {
+              el.classList.add("visible");
+            });
+          return;
+        }
+
+        // Setup scroll indicator
+        const scrollIndicator = document.getElementById("scrollIndicator");
+        const whoSection = document.getElementById("who-is");
+
+        if (scrollIndicator && whoSection) {
+          scrollIndicator.addEventListener("click", () => {
+            whoSection.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          });
+
+          // Hide scroll indicator after scrolling down
+          window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 200) {
+              scrollIndicator.style.opacity = "0";
+              scrollIndicator.style.pointerEvents = "none";
+            } else {
+              scrollIndicator.style.opacity = "1";
+              scrollIndicator.style.pointerEvents = "auto";
+            }
+          });
+        }
+
+        // Setup image loading
+        const aboutImage = document.getElementById("aboutImage");
+        const imagePlaceholder = document.getElementById("imagePlaceholder");
+
+        if (aboutImage && imagePlaceholder) {
+          aboutImage.onload = function () {
+            aboutImage.style.display = "block";
+            imagePlaceholder.style.display = "none";
+          };
+          // Trigger load if image is already cached
+          if (aboutImage.complete) {
+            aboutImage.onload();
+          }
+        }
+
+        // SECTION OBSERVER - Stricter to prevent early triggering
+        const sectionObserverOptions = {
+          root: null,
+          rootMargin: "0px 0px -20% 0px", // Section must be 20% into viewport
+          threshold: 0.25, // Need 25% visibility
+        };
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.25) {
+              setTimeout(() => {
+                entry.target.classList.add("visible");
+              }, 150);
+              sectionObserver.unobserve(entry.target);
+            }
+          });
+        }, sectionObserverOptions);
+
+        // Observe all sections
+        const sections = document.querySelectorAll(
+          ".who-section, .developers-section, .values-section"
+        );
+        sections.forEach((section) => {
+          section.classList.remove("visible"); // Ensure starts hidden
+          sectionObserver.observe(section);
+        });
+
+        // DEVELOPER CARDS - Slower, more elegant stagger
+        const teamCards = document.querySelectorAll(".dev-card");
+        if (teamCards.length > 0) {
+          const teamObserverOptions = {
+            root: null,
+            rootMargin: "0px 0px -10% 0px",
+            threshold: 0.2,
+          };
+
+          const teamObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
+                const index = Array.from(teamCards).indexOf(entry.target);
+
+                // IMPROVED: Slower stagger for more elegant appearance
+                setTimeout(() => {
+                  entry.target.classList.add("visible");
+                }, index * 250); // 250ms delay between each card (was 150ms)
+
+                teamObserver.unobserve(entry.target);
+              }
+            });
+          }, teamObserverOptions);
+
+          teamCards.forEach((card) => {
+            card.classList.remove("visible"); // Ensure starts hidden
+            teamObserver.observe(card);
+          });
+
+          console.log(`👥 Observing ${teamCards.length} team cards`);
+        }
+
+        // VALUE CARDS - Also improved stagger
+        const valueCards = document.querySelectorAll(".value-card");
+        if (valueCards.length > 0) {
+          const valueObserverOptions = {
+            root: null,
+            rootMargin: "0px 0px -10% 0px",
+            threshold: 0.2,
+          };
+
+          const valueObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
+                const index = Array.from(valueCards).indexOf(entry.target);
+
+                // IMPROVED: Slightly slower for smoother reveal
+                setTimeout(() => {
+                  entry.target.classList.add("visible");
+                }, index * 180); // 180ms delay between each card (was 120ms)
+
+                valueObserver.unobserve(entry.target);
+              }
+            });
+          }, valueObserverOptions);
+
+          valueCards.forEach((card) => {
+            card.classList.remove("visible"); // Ensure starts hidden
+            valueObserver.observe(card);
+          });
+
+          console.log(`💎 Observing ${valueCards.length} value cards`);
+        }
+
+        console.log("✨ About page animations initialized");
+      });
+    </script>
+  </body>
+</html>

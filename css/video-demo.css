@@ -1,0 +1,703 @@
+/* ============ VIDEO DEMO SECTION - REDESIGNED V2 ============ */
+
+/* Color Variables - Matching Website Theme */
+:root {
+    --demo-primary: #00c8ff;        /* Cyan - matches site accent */
+    --demo-secondary: #00e5a0;      /* Teal green */
+    --demo-accent: #a855f7;         /* Purple accent for variety */
+    --demo-bg: #0a0e1a;             /* Deep navy - matches site */
+    --demo-card-bg: rgba(15, 22, 40, 0.85);
+    --demo-text: #e2e8f0;
+    --demo-text-muted: #64748b;
+    --demo-border: rgba(0, 200, 255, 0.12);
+    --demo-glow: rgba(0, 200, 255, 0.15);
+}
+
+.video-demo-section {
+    position: relative;
+    padding: 100px 40px;
+    margin: 100px 0;
+    background: linear-gradient(180deg, var(--demo-bg) 0%, #0d1424 50%, var(--demo-bg) 100%);
+    border-radius: 24px;
+    border: 1px solid var(--demo-border);
+    overflow: hidden;
+}
+
+/* Circuit Board Background */
+.video-demo-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        /* Horizontal lines */
+        linear-gradient(90deg, transparent 0%, transparent 45%, rgba(0, 200, 255, 0.06) 45%, rgba(0, 200, 255, 0.06) 55%, transparent 55%, transparent 100%),
+        /* Vertical lines */
+        linear-gradient(0deg, transparent 0%, transparent 45%, rgba(0, 200, 255, 0.06) 45%, rgba(0, 200, 255, 0.06) 55%, transparent 55%, transparent 100%),
+        /* Circuit nodes */
+        radial-gradient(circle at 50% 50%, rgba(0, 200, 255, 0.15) 2px, transparent 2px),
+        /* Trace lines horizontal */
+        linear-gradient(90deg, transparent 0%, transparent 20%, rgba(0, 229, 160, 0.04) 20%, rgba(0, 229, 160, 0.04) 21%, transparent 21%, transparent 80%, rgba(0, 229, 160, 0.04) 80%, rgba(0, 229, 160, 0.04) 81%, transparent 81%),
+        /* Trace lines vertical */
+        linear-gradient(0deg, transparent 0%, transparent 30%, rgba(0, 229, 160, 0.04) 30%, rgba(0, 229, 160, 0.04) 31%, transparent 31%, transparent 70%, rgba(0, 229, 160, 0.04) 70%, rgba(0, 229, 160, 0.04) 71%, transparent 71%);
+    background-size:
+        100px 100px,
+        100px 100px,
+        100px 100px,
+        200px 200px,
+        200px 200px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.8;
+}
+
+/* Animated Data Flow Line */
+.video-demo-section .circuit-flow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.video-demo-section .circuit-flow::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--demo-primary), var(--demo-secondary), transparent);
+    top: 30%;
+    left: -150px;
+    animation: flowHorizontal 8s linear infinite;
+    box-shadow: 0 0 10px var(--demo-primary);
+}
+
+.video-demo-section .circuit-flow::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(180deg, transparent, var(--demo-secondary), var(--demo-primary), transparent);
+    top: -100px;
+    right: 25%;
+    animation: flowVertical 10s linear infinite 3s;
+    box-shadow: 0 0 10px var(--demo-secondary);
+}
+
+@keyframes flowHorizontal {
+    0% { left: -150px; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+}
+
+@keyframes flowVertical {
+    0% { top: -100px; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+/* Second Circuit Flow for more dynamic effect 
+.video-demo-section .circuit-flow.flow-2::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--demo-secondary), var(--demo-accent), transparent);
+    top: 70%;
+    left: -100px;
+    animation: flowHorizontal2 12s linear infinite 5s;
+    box-shadow: 0 0 8px var(--demo-secondary);
+}
+
+.video-demo-section .circuit-flow.flow-2::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 80px;
+    background: linear-gradient(180deg, transparent, var(--demo-primary), var(--demo-accent), transparent);
+    top: -80px;
+    left: 15%;
+    animation: flowVertical2 9s linear infinite 7s;
+    box-shadow: 0 0 8px var(--demo-primary);
+}
+
+@keyframes flowHorizontal2 {
+    0% { left: -100px; opacity: 0; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.8; }
+    100% { left: 100%; opacity: 0; }
+}
+
+@keyframes flowVertical2 {
+    0% { top: -80px; opacity: 0; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.8; }
+    100% { top: 100%; opacity: 0; }
+}
+*/
+
+/* Glow Orbs - Multiple for depth */
+.video-demo-section::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(0, 200, 255, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(0, 229, 160, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 90% 10%, rgba(168, 85, 247, 0.04) 0%, transparent 40%);
+    border-radius: 50%;
+    top: -150px;
+    right: -150px;
+    pointer-events: none;
+    z-index: 0;
+    animation: orbPulse 6s ease-in-out infinite;
+}
+
+@keyframes orbPulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+}
+
+.video-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--demo-primary), var(--demo-secondary), var(--demo-accent));
+    background-size: 200% 100%;
+    width: 0;
+    transition: width 0.3s ease;
+    z-index: 10;
+    animation: gradientShift 3s ease infinite;
+    box-shadow: 0 0 20px var(--demo-glow);
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.video-demo-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.video-demo-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--demo-text);
+    text-align: center;
+    position: relative;
+}
+
+.video-demo-title i {
+    color: var(--demo-primary);
+    margin-right: 12px;
+    filter: drop-shadow(0 0 8px var(--demo-glow));
+}
+
+.video-demo-description {
+    color: var(--demo-text-muted);
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 60px;
+    line-height: 1.7;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Main Frame - Tech Panel Style */
+.demo-video-frame {
+    position: relative;
+    background: var(--demo-card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--demo-border);
+    border-radius: 20px;
+    padding: 50px 40px;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        0 0 60px rgba(0, 200, 255, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    transition: all 0.4s ease;
+    overflow: visible;
+}
+
+/* Corner Accents */
+.demo-video-frame::before,
+.demo-video-frame::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: 2px solid transparent;
+    pointer-events: none;
+}
+
+.demo-video-frame::before {
+    top: -1px;
+    left: -1px;
+    border-top-color: var(--demo-primary);
+    border-left-color: var(--demo-primary);
+    border-radius: 20px 0 0 0;
+}
+
+.demo-video-frame::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom-color: var(--demo-secondary);
+    border-right-color: var(--demo-secondary);
+    border-radius: 0 0 20px 0;
+}
+
+.demo-video-frame:hover {
+    border-color: rgba(0, 200, 255, 0.2);
+    box-shadow:
+        0 0 80px rgba(0, 200, 255, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Connection Line SVG Container */
+.connection-lines {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.connection-line {
+    stroke: url(#lineGradient);
+    stroke-width: 2;
+    fill: none;
+    stroke-dasharray: 8, 4;
+    animation: dashFlow 1s linear infinite;
+}
+
+@keyframes dashFlow {
+    to { stroke-dashoffset: -12; }
+}
+
+/* Video Steps Grid */
+.video-steps {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Individual Step Card */
+.video-step {
+    text-align: center;
+    padding: 28px 16px 24px;
+    background: rgba(0, 200, 255, 0.02);
+    border: 1px solid rgba(0, 200, 255, 0.08);
+    border-radius: 16px;
+    opacity: 0.5;
+    transform: translateY(8px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    cursor: pointer;
+}
+
+.video-step::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1px;
+    background: linear-gradient(135deg, transparent, rgba(0, 200, 255, 0.1), transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-step:hover {
+    opacity: 0.85;
+    transform: translateY(0);
+    background: rgba(0, 200, 255, 0.04);
+    border-color: rgba(0, 200, 255, 0.15);
+}
+
+.video-step:hover::before {
+    opacity: 1;
+}
+
+.video-step.active {
+    opacity: 1;
+    transform: translateY(-4px);
+    background: linear-gradient(180deg, rgba(0, 200, 255, 0.08) 0%, rgba(0, 229, 160, 0.04) 100%);
+    border-color: var(--demo-primary);
+    box-shadow:
+        0 8px 32px rgba(0, 200, 255, 0.15),
+        0 0 0 1px rgba(0, 200, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.video-step.active::before {
+    opacity: 1;
+    background: linear-gradient(135deg, var(--demo-primary), var(--demo-secondary));
+}
+
+/* Step Number Badge */
+.step-number {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, #1a2a40 0%, #0d1424 100%);
+    border: 2px solid var(--demo-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--demo-primary);
+    transition: all 0.3s ease;
+}
+
+.video-step.active .step-number {
+    background: linear-gradient(135deg, var(--demo-primary) 0%, var(--demo-secondary) 100%);
+    border-color: var(--demo-secondary);
+    color: #0a0e1a;
+    box-shadow: 0 0 20px var(--demo-glow);
+    transform: translateX(-50%) scale(1.1);
+}
+
+.video-step.completed .step-number {
+    background: var(--demo-secondary);
+    border-color: var(--demo-secondary);
+    color: #0a0e1a;
+}
+
+.video-step.completed .step-number::after {
+    content: '✓';
+    font-size: 0.85rem;
+}
+
+/* Step Visual Container */
+.step-visual {
+    position: relative;
+    height: 90px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Step Icon */
+.step-icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 200, 255, 0.05);
+    border: 1px solid rgba(0, 200, 255, 0.15);
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.4s ease;
+    z-index: 2;
+}
+
+/* Scanning Ring Effect */
+.step-icon::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 1px dashed rgba(0, 200, 255, 0.2);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.step-icon::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: var(--demo-primary);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.video-step.active .step-icon::before {
+    opacity: 1;
+    animation: scanRing 3s linear infinite;
+}
+
+.video-step.active .step-icon::after {
+    opacity: 1;
+    animation: scanRingFast 1.5s linear infinite;
+}
+
+@keyframes scanRing {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes scanRingFast {
+    to { transform: rotate(-360deg); }
+}
+
+.step-icon i {
+    color: var(--demo-text-muted);
+    font-size: 1.5rem;
+    transition: all 0.4s ease;
+    z-index: 2;
+}
+
+/* Active Step Icon */
+.video-step.active .step-icon {
+    background: rgba(0, 200, 255, 0.1);
+    border-color: var(--demo-primary);
+    box-shadow:
+        0 0 30px rgba(0, 200, 255, 0.2),
+        inset 0 0 20px rgba(0, 200, 255, 0.05);
+}
+
+.video-step.active .step-icon i {
+    color: var(--demo-primary);
+    filter: drop-shadow(0 0 8px var(--demo-glow));
+    transform: scale(1.1);
+}
+
+/* Completed Step */
+.video-step.completed .step-icon {
+    background: rgba(0, 229, 160, 0.08);
+    border-color: var(--demo-secondary);
+}
+
+.video-step.completed .step-icon i {
+    color: var(--demo-secondary);
+}
+
+.video-step.completed .step-icon::before {
+    opacity: 1;
+    border-color: rgba(0, 229, 160, 0.3);
+    animation: none;
+}
+
+/* Hover States */
+.video-step:hover .step-icon {
+    border-color: rgba(0, 200, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.video-step:hover .step-icon i {
+    color: var(--demo-primary);
+}
+
+/* Hide old step animations */
+.step-animation {
+    display: none;
+}
+
+/* Step Content */
+.step-content {
+    min-height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 8px;
+}
+
+.step-content h4 {
+    font-size: 0.85rem;
+    color: var(--demo-text);
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.3;
+}
+
+.video-step.active .step-content h4 {
+    color: var(--demo-primary);
+    text-shadow: 0 0 20px var(--demo-glow);
+}
+
+.step-content p {
+    font-size: 0.8rem;
+    color: var(--demo-text-muted);
+    line-height: 1.5;
+    opacity: 0.7;
+}
+
+.video-step.active .step-content p {
+    opacity: 1;
+}
+
+/* Video Controls */
+.video-controls {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Progress Bar Track */
+.progress-track {
+    width: 200px;
+    height: 3px;
+    background: rgba(0, 200, 255, 0.1);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--demo-primary), var(--demo-secondary));
+    border-radius: 2px;
+    width: 25%;
+    transition: width 0.5s ease;
+    box-shadow: 0 0 10px var(--demo-glow);
+}
+
+/* Progress Dots */
+.progress-dots {
+    display: flex;
+    gap: 16px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(0, 200, 255, 0.15);
+    border: 1px solid rgba(0, 200, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.dot::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.dot:hover {
+    background: rgba(0, 200, 255, 0.3);
+    transform: scale(1.2);
+}
+
+.dot.active {
+    background: var(--demo-primary);
+    border-color: var(--demo-primary);
+    box-shadow: 0 0 15px var(--demo-glow);
+}
+
+.dot.active::before {
+    border-color: rgba(0, 200, 255, 0.3);
+}
+
+.dot.completed {
+    background: var(--demo-secondary);
+    border-color: var(--demo-secondary);
+}
+
+/* Autoplay indicator */
+.autoplay-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--demo-text-muted);
+    font-size: 0.8rem;
+}
+
+.autoplay-indicator i {
+    color: var(--demo-secondary);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+/* ============ RESPONSIVE ============ */
+
+@media (max-width: 900px) {
+    .video-steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .connection-lines {
+        display: none;
+    }
+
+    .video-demo-section {
+        padding: 60px 24px;
+        margin: 60px 0;
+    }
+
+    .demo-video-frame {
+        padding: 40px 24px;
+    }
+
+    .video-demo-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .video-steps {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .video-step {
+        padding: 24px 20px 20px;
+    }
+
+    .step-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .step-icon i {
+        font-size: 1.3rem;
+    }
+
+    .video-demo-title {
+        font-size: 1.5rem;
+    }
+
+    .video-demo-description {
+        font-size: 0.95rem;
+    }
+}

@@ -1,0 +1,291 @@
+/* ============ BASE STYLES ============ */
+/* Fonts, Variables, Reset, Body */
+
+/* Custom Font */
+@font-face {
+    font-family: 'Orbitron';
+    src: url('../assets/fonts/Orbitron-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS Variables */
+:root {
+    --bg-primary: #0a0e27;
+    --bg-secondary: #0f1429;
+    --bg-tertiary: #151b2f;
+    --accent-cyan: #00d9ff;
+    --accent-lime: #00ff41;
+    --accent-cyan-rgb: 0, 217, 255;
+    --accent-lime-rgb: 0, 255, 65;
+    --text-primary: #f0f6fc;
+    --text-secondary: #c9d1d9;
+    --text-muted: #8b949e;
+    --border-primary: #1a2847;
+    --border-muted: #0f1429;
+    --font-orbitron: 'Orbitron', sans-serif;
+
+    /* New variables for improved theming */
+    --surface-elevated: rgba(21, 27, 47, 0.6);
+    --border-subtle: rgba(255, 255, 255, 0.1);
+    --success: #10b981;
+    --success-rgb: 16, 185, 129;
+    --warning: #f59e0b;
+    --warning-rgb: 245, 158, 11;
+    --error: #ef4444;
+    --error-rgb: 239, 68, 68;
+    --shadow-primary: rgba(0, 217, 255, 0.15);
+    --shadow-strong: rgba(0, 217, 255, 0.3);
+
+     /* ADD THESE TWO LINES */
+    --container-max-width: 1600px;
+    --container-padding: 40px;
+}
+
+/* Light Theme Variables */
+[data-theme="light"] {
+    --bg-primary: #f5f7fa;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #e8ecf0;
+    --text-primary: #1a1a2e;
+    --text-secondary: #4a4a5a;
+    --text-muted: #6b7280;
+    --border-primary: #d1d5db;
+    --border-muted: #e5e7eb;
+    --surface-elevated: rgba(255, 255, 255, 0.9);
+    --border-subtle: rgba(0, 0, 0, 0.1);
+    --shadow-primary: rgba(0, 0, 0, 0.1);
+    --shadow-strong: rgba(0, 0, 0, 0.15);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    background: var(--bg-primary);
+    min-height: 100vh;
+    color: var(--text-secondary);
+    position: relative;
+    overflow-x: hidden;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Apply Orbitron to headings and key elements */
+h1, h2, h3, 
+.logo-title, 
+.tab-btn,
+.btn {
+    font-family: var(--font-orbitron), sans-serif;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+
+/* Container */
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(180deg, var(--bg-primary), rgba(0, 217, 255, 0.05) 50%, var(--bg-primary));
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--accent-cyan), var(--accent-lime));
+    border-radius: 6px;
+    border: 2px solid var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--accent-lime), var(--accent-cyan));
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.8);
+}
+
+/* Focus States */
+*:focus-visible {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Skip Link (Accessibility) */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-cyan);
+    color: var(--bg-primary);
+    padding: 12px 24px;
+    border-radius: 0 0 8px 8px;
+    font-weight: 600;
+    z-index: 10000;
+    transition: top 0.3s ease;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Toast Notifications Container */
+.toast-container {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.toast {
+    background: var(--surface-elevated);
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    padding: 16px 20px;
+    color: var(--text-primary);
+    box-shadow: 0 8px 32px var(--shadow-strong);
+    backdrop-filter: blur(8px);
+    animation: slideInRight 0.3s ease-out;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 280px;
+    max-width: 400px;
+}
+
+.toast.success {
+    border-left: 4px solid var(--success);
+}
+
+.toast.error {
+    border-left: 4px solid var(--error);
+}
+
+.toast.warning {
+    border-left: 4px solid var(--warning);
+}
+
+.toast i {
+    font-size: 1.2rem;
+}
+
+.toast.success i {
+    color: var(--success);
+}
+
+.toast.error i {
+    color: var(--error);
+}
+
+.toast.warning i {
+    color: var(--warning);
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+/* Selection Styling */
+::selection {
+    background: var(--accent-cyan);
+    color: var(--bg-primary);
+}
+
+::-moz-selection {
+    background: var(--accent-cyan);
+    color: var(--bg-primary);
+}
+
+/* ============ PERFORMANCE OPTIMIZATIONS ============ */
+
+/* Lazy-loaded sections start hidden */
+.lazy-section {
+    opacity: 0;
+}
+
+.lazy-section.section-loaded {
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
+
+/* Reduced motion for low-end devices */
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+}
+
+.reduce-motion body::after,
+.reduce-motion .particle,
+.reduce-motion .circuit-flow,
+.reduce-motion .hero-glow {
+    display: none !important;
+}
+
+/* Remove will-change from elements not actively animating */
+* {
+    will-change: auto !important;
+}
+
+/* Only add will-change to actively scrolling elements */
+.animating {
+    will-change: transform, opacity;
+}
