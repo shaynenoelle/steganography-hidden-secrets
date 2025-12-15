@@ -1,14 +1,13 @@
 /**
  * Reusable Header Component
  * Injects the header HTML into all pages
- * FIXED: Navigation for GitHub Pages deployment
  */
 
 (function() {
     const headerHTML = `
     <header class="top-header">
         <div class="header-content">
-            <a href="index.html" class="logo-section no-loading" style="text-decoration: none; cursor: pointer;">
+            <a href="steganography.html" class="logo-section no-loading" style="text-decoration: none; cursor: pointer;">
                 <span class="lock-icon"><i class="fas fa-lock"></i></span>
                 <h1 class="logo-title">Hidden Secrets</h1>
             </a>
@@ -17,8 +16,8 @@
             </button>
             <nav class="utility-nav" id="utilityNav">
                 <div class="nav-primary">
-                    <a href="index.html#embed" class="nav-link no-reload" data-page="steganography" data-section="embed"> &lt;/ TOOL&gt;</a>
-                    <a href="index.html#learn" class="nav-link no-reload" data-page="steganography" data-section="learn"> &lt;/ LEARN&gt; </a>
+                    <a href="steganography.html#embed" class="nav-link no-reload" data-page="steganography" data-section="embed"> &lt;/ TOOL&gt;</a>
+                    <a href="steganography.html#learn" class="nav-link no-reload" data-page="steganography" data-section="learn"> &lt;/ LEARN&gt; </a>
                 </div>
                 <div class="nav-secondary">
                     <a href="help.html" class="nav-link no-reload" data-page="help"> &lt;/ HELP&gt;</a>
@@ -37,7 +36,6 @@
         const headerPlaceholder = document.getElementById('header-placeholder');
         if (headerPlaceholder) {
             headerPlaceholder.innerHTML = headerHTML;
-            headerPlaceholder.classList.add('loaded');
             highlightActivePage();
             initMobileMenu();
             initThemeToggle();
@@ -55,7 +53,7 @@
                 // Show loading screen before navigation
                 showLoadingScreen();
                 setTimeout(() => {
-                    window.location.href = 'index.html';
+                    window.location.href = 'steganography.html';
                 }, 100);
             });
         }
@@ -69,7 +67,7 @@
         }
     }
 
-    // Initialize navigation links with cross-page handling - FIXED VERSION
+    // Initialize navigation links with cross-page handling
     function initNavigationLinks() {
         const navLinks = document.querySelectorAll('.nav-link.no-reload');
         
@@ -79,60 +77,50 @@
                 const currentPage = getCurrentPage();
                 const targetHref = link.getAttribute('href');
                 
-                // TOOL and LEARN links (index.html with hash)
-                if (targetPage === 'steganography') {
-                    e.preventDefault(); // Always prevent default for steganography links
+                // If clicking a link on the same page (steganography.html)
+                if (targetPage === currentPage && currentPage === 'steganography') {
+                    e.preventDefault();
                     
                     // Extract hash from href
                     const hash = targetHref.includes('#') ? targetHref.split('#')[1] : '';
                     
-                    // If we're already on index.html
-                    if (currentPage === 'steganography') {
-                        if (hash) {
-                            // Update URL hash without reload
-                            history.pushState(null, null, `#${hash}`);
-                            
-                            // Smooth scroll to section
-                            const targetSection = document.getElementById(hash);
-                            if (targetSection) {
-                                const headerOffset = 80;
-                                const elementPosition = targetSection.getBoundingClientRect().top + window.scrollY;
-                                const offsetPosition = elementPosition - headerOffset;
-
-                                window.scrollTo({
-                                    top: offsetPosition,
-                                    behavior: 'smooth'
-                                });
-                            }
-                            
-                            // Update active link highlighting
-                            highlightActivePage();
-                        }
-                    } 
-                    // If we're on a different page (help.html or about.html)
-                    else {
-                        // Show loading screen
-                        showLoadingScreen();
+                    if (hash) {
+                        // Update URL hash without reload
+                        history.pushState(null, null, `#${hash}`);
                         
-                        // Navigate to index.html with hash
-                        setTimeout(() => {
-                            // Use full href to ensure proper navigation
-                            window.location.href = targetHref;
-                        }, 100);
+                        // Smooth scroll to section
+                        const targetSection = document.getElementById(hash);
+                        if (targetSection) {
+                            const headerOffset = 80;
+                            const elementPosition = targetSection.getBoundingClientRect().top + window.scrollY;
+                            const offsetPosition = elementPosition - headerOffset;
+
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                        
+                        // Update active link highlighting
+                        highlightActivePage();
                     }
+                } 
+                // If navigating to steganography.html from another page
+                else if (targetPage === 'steganography' && currentPage !== 'steganography') {
+                    e.preventDefault();
+                    
+                    // Show loading screen
+                    showLoadingScreen();
+                    
+                    // Small delay to ensure loading screen appears
+                    setTimeout(() => {
+                        window.location.href = targetHref;
+                    }, 100);
                 }
-                // HELP and ABOUT links (different HTML files)
+                // For other pages (help.html, about.html), allow normal navigation
                 else if (targetPage !== currentPage) {
-                    // Only prevent default if on steganography page
-                    // This allows normal navigation from help/about to help/about
-                    if (currentPage === 'steganography') {
-                        e.preventDefault();
-                        showLoadingScreen();
-                        setTimeout(() => {
-                            window.location.href = targetHref;
-                        }, 100);
-                    }
-                    // Otherwise, let browser handle normal navigation
+                    // Normal navigation - browser handles it
+                    // No need to prevent default
                 }
             });
         });
@@ -193,11 +181,10 @@
         });
     }
 
-    // Get current page name from URL - IMPROVED VERSION
+    // Get current page name from URL
     function getCurrentPage() {
         const path = window.location.pathname;
-        // Handle both local (file.html) and deployed (folder/file.html) paths
-        const page = path.split('/').pop().replace('.html', '') || 'steganography';
+        const page = path.split('/').pop().replace('.html', '');
         
         if (page === '' || page === 'index') {
             return 'steganography';
