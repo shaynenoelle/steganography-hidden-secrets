@@ -8,7 +8,7 @@
     const headerHTML = `
     <header class="top-header">
         <div class="header-content">
-            <a href="steganography.html" class="logo-section no-loading" style="text-decoration: none; cursor: pointer;">
+            <a href="index.html" class="logo-section no-loading" style="text-decoration: none; cursor: pointer;">
                 <span class="lock-icon"><i class="fas fa-lock"></i></span>
                 <h1 class="logo-title">Hidden Secrets</h1>
             </a>
@@ -55,7 +55,7 @@
                 // Show loading screen before navigation
                 showLoadingScreen();
                 setTimeout(() => {
-                    window.location.href = 'steganography.html';
+                    window.location.href = 'index.html';
                 }, 100);
             });
         }
@@ -79,14 +79,14 @@
                 const currentPage = getCurrentPage();
                 const targetHref = link.getAttribute('href');
                 
-                // TOOL and LEARN links (steganography.html with hash)
+                // TOOL and LEARN links (index.html with hash)
                 if (targetPage === 'steganography') {
                     e.preventDefault(); // Always prevent default for steganography links
                     
                     // Extract hash from href
                     const hash = targetHref.includes('#') ? targetHref.split('#')[1] : '';
                     
-                    // If we're already on steganography.html
+                    // If we're already on index.html
                     if (currentPage === 'steganography') {
                         if (hash) {
                             // Update URL hash without reload
@@ -114,7 +114,7 @@
                         // Show loading screen
                         showLoadingScreen();
                         
-                        // Navigate to steganography.html with hash
+                        // Navigate to index.html with hash
                         setTimeout(() => {
                             // Use full href to ensure proper navigation
                             window.location.href = targetHref;
