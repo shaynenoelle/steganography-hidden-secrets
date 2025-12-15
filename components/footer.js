@@ -225,10 +225,9 @@
         const footerPlaceholder = document.getElementById('footer-placeholder');
         if (footerPlaceholder) {
             footerPlaceholder.innerHTML = footerHTML;
-            footerPlaceholder.classList.add('loaded');
             // CRITICAL: Initialize modals AFTER HTML is injected
             initFooterModals();
-            console.log('✅ Footer injected and modals initialized');
+            console.log('Footer injected and modals initialized');
         }
     }
 
