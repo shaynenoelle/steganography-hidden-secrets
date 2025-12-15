@@ -1,31 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hidden Secrets - Digital Watermarking</title>
 
     <!-- SEO Meta Tags -->
-    <meta
-      name="description"
-      content="Free digital watermarking and steganography tool. Embed hidden messages in images securely using LSB steganography with optional SHA-256 encryption."
-    />
-    <meta
-      name="keywords"
-      content="steganography, watermarking, image security, LSB, digital watermark, copyright protection, hidden message"
-    />
-    <meta name="author" content="Hidden Secrets Team" />
+    <meta name="description" content="Free digital watermarking and steganography tool. Embed hidden messages in images securely using LSB steganography with optional SHA-256 encryption.">
+    <meta name="keywords" content="steganography, watermarking, image security, LSB, digital watermark, copyright protection, hidden message">
+    <meta name="author" content="Hidden Secrets Team">
 
     <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Hidden Secrets - Digital Watermarking" />
-    <meta
-      property="og:description"
-      content="Embed and extract hidden watermarks from images securely. Free, open-source, and privacy-focused."
-    />
-    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Hidden Secrets - Digital Watermarking">
+    <meta property="og:description" content="Embed and extract hidden watermarks from images securely. Free, open-source, and privacy-focused.">
+    <meta property="og:type" content="website">
 
     <!-- Security -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
     <!-- CRITICAL: Load main CSS synchronously to prevent FOUC -->
     <link rel="stylesheet" href="css/styles.css" />
@@ -78,43 +69,23 @@
       }
     </style>
 
-    <!-- Resource Hints for Performance -->
-    <link
-      rel="preload"
-      href="assets/fonts/Orbitron-Black.ttf"
-      as="font"
-      type="font/ttf"
-      crossorigin
-    />
-    <link rel="preload" href="js/crypto.js" as="script" />
-    <link rel="preload" href="js/ui.js" as="script" />
-    <link rel="preload" href="js/fileHandler.js" as="script" />
-    <link rel="preload" href="js/embed.js" as="script" />
-    <link rel="preload" href="js/extract.js" as="script" />
-    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-    <link rel="preconnect" href="https://github.com" crossorigin />
-    <link rel="preconnect" href="https://linkedin.com" crossorigin />
-    <link rel="preconnect" href="https://facebook.com" crossorigin />
-    <!-- Compression Hints -->
-    <meta http-equiv="Accept-CH" content="DPR, Width, Viewport-Width" />
-    <link
-      rel="preload"
-      href="css/styles.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript><link rel="stylesheet" href="css/styles.css" /></noscript>
 
-    <!-- Non-critical CSS - loaded asynchronously -->
-    <link
-      rel="preload"
-      href="css/styles.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-  </head>
-  <body>
+    <!-- Resource Hints for Performance -->
+    <link rel="preload" href="assets/fonts/Orbitron-Black.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="js/crypto.js" as="script">
+    <link rel="preload" href="js/ui.js" as="script">
+    <link rel="preload" href="js/fileHandler.js" as="script">
+    <link rel="preload" href="js/embed.js" as="script">
+    <link rel="preload" href="js/extract.js" as="script">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://github.com" crossorigin>
+    <link rel="preconnect" href="https://linkedin.com" crossorigin>
+    <link rel="preconnect" href="https://facebook.com" crossorigin>
+
+</head>
+
+<body>
     <!-- Skip to Content (Accessibility) -->
     <a href="#embed" class="skip-link">Skip to main content</a>
 
@@ -126,552 +97,384 @@
 
     <!-- Floating Particles (OPTIMIZED - Only 6) -->
     <div class="particles-container" id="particles">
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
     </div>
 
     <!-- Top Header -->
     <div id="header-placeholder"></div>
 
     <div class="container">
-      <!-- Hero Section -->
-      <section id="hero" class="hero-section">
-        <div class="hero-content">
-          <div class="hero-badge" data-scroll="fade-up">
-            <i class="fas fa-shield-alt"></i> 100% Private & Secure
-          </div>
-          <h1 class="hero-title" data-scroll="fade-up" data-delay="0.1">
-            Hide Your Secrets<br />
-            <span class="gradient-text">In Plain Sight</span>
-          </h1>
-          <p class="hero-description" data-scroll="fade-up" data-delay="0.2">
-            Embed invisible watermarks into your images using advanced LSB
-            steganography. Protect your creative work, prove ownership, or send
-            hidden messages — all processed locally in your browser.
-          </p>
-          <div class="hero-features" data-scroll="fade-up" data-delay="0.3">
-            <div class="hero-feature">
-              <i class="fas fa-eye-slash"></i>
-              <span>Invisible to Human Eye</span>
-            </div>
-            <div class="hero-feature">
-              <i class="fas fa-lock"></i>
-              <span>SHA-256 Encryption</span>
-            </div>
-            <div class="hero-feature">
-              <i class="fas fa-laptop"></i>
-              <span>No Server Upload</span>
-            </div>
-          </div>
-          <div class="hero-cta" data-scroll="fade-up" data-delay="0.4">
-            <a href="#embed" class="btn btn-primary btn-large"
-              >Get Started Free</a
-            >
-            <a href="#learn" class="btn btn-secondary btn-large"
-              >See How It Works</a
-            >
-          </div>
-          <div class="hero-stats" data-scroll="fade-up" data-delay="0.5">
-            <div class="hero-stat">
-              <span class="hero-stat-number">256-bit</span>
-              <span class="hero-stat-label">Encryption</span>
-            </div>
-            <div class="hero-stat-divider"></div>
-            <div class="hero-stat">
-              <span class="hero-stat-number">100%</span>
-              <span class="hero-stat-label">Free Forever</span>
-            </div>
-            <div class="hero-stat-divider"></div>
-            <div class="hero-stat">
-              <span class="hero-stat-number">0</span>
-              <span class="hero-stat-label">Data Collected</span>
-            </div>
-          </div>
-        </div>
-        <div class="hero-visual" data-scroll="scale">
-          <div class="hero-image-container">
-            <div class="hero-glow"></div>
-            <div class="hero-mockup">
-              <div class="mockup-header">
-                <span class="mockup-dot"></span>
-                <span class="mockup-dot"></span>
-                <span class="mockup-dot"></span>
-              </div>
-              <div class="mockup-content">
-                <div class="mockup-icon"><i class="fas fa-image"></i></div>
-                <div class="mockup-text">Your Image</div>
-                <div class="mockup-arrow">
-                  <i class="fas fa-arrow-down"></i>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-badge" data-scroll="fade-up">
+                    <i class="fas fa-shield-alt"></i> 100% Private & Secure
                 </div>
-                <div class="mockup-icon success">
-                  <i class="fas fa-check-circle"></i>
+                <h1 class="hero-title" data-scroll="fade-up" data-delay="0.1">
+                    Hide Your Secrets<br>
+                    <span class="gradient-text">In Plain Sight</span>
+                </h1>
+                <p class="hero-description" data-scroll="fade-up" data-delay="0.2">
+                    Embed invisible watermarks into your images using advanced LSB steganography.
+                    Protect your creative work, prove ownership, or send hidden messages —
+                    all processed locally in your browser.
+                </p>
+                <div class="hero-features" data-scroll="fade-up" data-delay="0.3">
+                    <div class="hero-feature">
+                        <i class="fas fa-eye-slash"></i>
+                        <span>Invisible to Human Eye</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-lock"></i>
+                        <span>SHA-256 Encryption</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-laptop"></i>
+                        <span>No Server Upload</span>
+                    </div>
                 </div>
-                <div class="mockup-text">Watermarked</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="hero-scroll-indicator" id="scrollIndicator">
-          <span>Scroll to explore</span>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-      </section>
-
-      <!-- Tool Section -->
-      <section id="embed" class="tool-section">
-        <!-- Header -->
-        <div class="header">
-          <h2><i class="fas fa-code"></i> Watermark Tool</h2>
-          <p>Embed or extract hidden watermarks from your images</p>
-        </div>
-
-        <!-- Tabs -->
-        <div class="tabs">
-          <button
-            class="tab-btn active"
-            id="embedTabBtn"
-            onclick="switchTab('embed')"
-          >
-            <i class="fas fa-lock"></i> Embed Watermark
-          </button>
-          <button
-            class="tab-btn"
-            id="extractTabBtn"
-            onclick="switchTab('extract')"
-          >
-            <i class="fas fa-unlock"></i> Extract Watermark
-          </button>
-        </div>
-
-        <!-- Main Card -->
-        <div class="main-card">
-          <!-- Embed Tab -->
-          <div id="embedTab" class="tab-content active">
-            <div class="form-group">
-              <label><i class="fas fa-image"></i> Upload Image</label>
-              <div
-                class="upload-area"
-                onclick="document.getElementById('embedImageInput').click()"
-                style="cursor: pointer; transition: all 0.3s ease"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                  />
-                </svg>
-                <p>Click to upload or drag & drop</p>
-                <p>JPG, PNG (max 5MB)</p>
-                <input
-                  type="file"
-                  id="embedImageInput"
-                  accept="image/*"
-                  style="display: none"
-                  onchange="handleImageUpload(event)"
-                />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="watermarkText"
-                ><i class="fas fa-font"></i> Watermark Text</label
-              >
-              <input
-                type="text"
-                id="watermarkText"
-                placeholder="e.g., © 2025 John Doe - All Rights Reserved"
-                maxlength="1000"
-                required
-              />
-              <div class="char-counter">
-                <span id="charCount">0</span> / 1000 characters
-              </div>
-              <div class="strength-indicator">
-                <div class="strength-label">Watermark Strength:</div>
-                <div class="strength-bar">
-                  <div class="strength-fill" id="strengthFill"></div>
+                <div class="hero-cta" data-scroll="fade-up" data-delay="0.4">
+                    <a href="#embed" class="btn btn-primary btn-large">Get Started Free</a>
+                    <a href="#learn" class="btn btn-secondary btn-large">See How It Works</a>
                 </div>
-                <div class="strength-text" id="strengthText">
-                  Enter watermark text
+                <div class="hero-stats" data-scroll="fade-up" data-delay="0.5">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">256-bit</span>
+                        <span class="hero-stat-label">Encryption</span>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">100%</span>
+                        <span class="hero-stat-label">Free Forever</span>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">0</span>
+                        <span class="hero-stat-label">Data Collected</span>
+                    </div>
                 </div>
-              </div>
             </div>
-
-            <div class="form-group">
-              <label for="watermarkPassword"
-                ><i class="fas fa-key"></i> Password (Optional)</label
-              >
-              <input
-                type="password"
-                id="watermarkPassword"
-                placeholder="Enter password to encrypt watermark (leave empty for no encryption)"
-              />
-            </div>
-
-            <button
-              class="btn btn-primary"
-              onclick="embedWatermark()"
-              id="embedBtn"
-            >
-              <span class="btn-text"
-                ><i class="fas fa-lock"></i> Generate Watermarked Image</span
-              >
-              <span class="btn-loading hidden"
-                ><i class="fas fa-spinner fa-spin"></i> Processing...</span
-              >
-            </button>
-
-            <!-- Progress Bar -->
-            <div class="progress-container" id="embedProgress">
-              <div class="progress-bar" id="embedProgressBar"></div>
-            </div>
-            <div class="progress-text" id="embedProgressText"></div>
-
-            <!-- Image Comparison -->
-            <div id="imageComparison" class="image-comparison hidden">
-              <div class="image-box">
-                <h3><i class="fas fa-camera"></i> Original Image</h3>
-                <img id="originalImage" src="" alt="Original" />
-              </div>
-              <div class="image-box">
-                <h3><i class="fas fa-lock"></i> Watermarked Image</h3>
-                <div id="watermarkedPlaceholder" class="placeholder">
-                  Watermarked image will appear here
+            <div class="hero-visual" data-scroll="scale">
+                <div class="hero-image-container">
+                    <div class="hero-glow"></div>
+                    <div class="hero-mockup">
+                        <div class="mockup-header">
+                            <span class="mockup-dot"></span>
+                            <span class="mockup-dot"></span>
+                            <span class="mockup-dot"></span>
+                        </div>
+                        <div class="mockup-content">
+                            <div class="mockup-icon"><i class="fas fa-image"></i></div>
+                            <div class="mockup-text">Your Image</div>
+                            <div class="mockup-arrow"><i class="fas fa-arrow-down"></i></div>
+                            <div class="mockup-icon success"><i class="fas fa-check-circle"></i></div>
+                            <div class="mockup-text">Watermarked</div>
+                        </div>
+                    </div>
                 </div>
-                <img
-                  id="watermarkedImage"
-                  src=""
-                  alt="Watermarked"
-                  class="hidden"
-                />
-                <button
-                  class="btn btn-success hidden"
-                  id="downloadBtn"
-                  onclick="downloadImage()"
-                >
-                  <i class="fas fa-download"></i> Download Watermarked Image
+            </div>
+            <div class="hero-scroll-indicator" id="scrollIndicator">
+                <span>Scroll to explore</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- Tool Section -->
+        <section id="embed" class="tool-section">
+            <!-- Header -->
+            <div class="header">
+                <h2><i class="fas fa-code"></i> Watermark Tool</h2>
+                <p>Embed or extract hidden watermarks from your images</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" id="embedTabBtn" onclick="switchTab('embed')"><i class="fas fa-lock"></i> Embed Watermark</button>
+                <button class="tab-btn" id="extractTabBtn" onclick="switchTab('extract')"><i class="fas fa-unlock"></i> Extract Watermark</button>
+            </div>
+
+            <!-- Main Card -->
+            <div class="main-card">
+            <!-- Embed Tab -->
+            <div id="embedTab" class="tab-content active">
+                <div class="form-group">
+                    <label><i class="fas fa-image"></i> Upload Image</label>
+                    <div class="upload-area" onclick="document.getElementById('embedImageInput').click()" style="cursor: pointer; transition: all 0.3s ease;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                        </svg>
+                        <p>Click to upload or drag & drop</p>
+                        <p>JPG, PNG (max 5MB)</p>
+                        <input type="file" id="embedImageInput" accept="image/*" style="display: none;" onchange="handleImageUpload(event)">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="watermarkText"><i class="fas fa-font"></i> Watermark Text</label>
+                    <input type="text" id="watermarkText" placeholder="e.g., © 2025 John Doe - All Rights Reserved" maxlength="1000" required>
+                    <div class="char-counter"><span id="charCount">0</span> / 1000 characters</div>
+                    <div class="strength-indicator">
+                        <div class="strength-label">Watermark Strength:</div>
+                        <div class="strength-bar">
+                            <div class="strength-fill" id="strengthFill"></div>
+                        </div>
+                        <div class="strength-text" id="strengthText">Enter watermark text</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="watermarkPassword"><i class="fas fa-key"></i> Password (Optional)</label>
+                    <input type="password" id="watermarkPassword" placeholder="Enter password to encrypt watermark (leave empty for no encryption)">
+                </div>
+
+                <button class="btn btn-primary" onclick="embedWatermark()" id="embedBtn">
+                    <span class="btn-text"><i class="fas fa-lock"></i> Generate Watermarked Image</span>
+                    <span class="btn-loading hidden"><i class="fas fa-spinner fa-spin"></i> Processing...</span>
                 </button>
-              </div>
-            </div>
-          </div>
 
-          <!-- Extract Tab -->
-          <div id="extractTab" class="tab-content">
-            <div class="info-box">
-              <strong><i class="fas fa-info-circle"></i> Info:</strong> Upload
-              the watermarked image to extract the hidden message
-            </div>
-
-            <div class="form-group">
-              <label
-                ><i class="fas fa-image"></i> Upload Watermarked Image</label
-              >
-              <div
-                class="upload-area"
-                onclick="document.getElementById('extractImageInput').click()"
-                style="cursor: pointer; transition: all 0.3s ease"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                  />
-                </svg>
-                <p>Click to upload or drag & drop</p>
-                <input
-                  type="file"
-                  id="extractImageInput"
-                  accept="image/*"
-                  style="display: none"
-                  onchange="handleExtractImageUpload(event)"
-                />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="extractPassword"
-                ><i class="fas fa-key"></i> Password (If Used)</label
-              >
-              <input
-                type="password"
-                id="extractPassword"
-                placeholder="Enter password if watermark was encrypted (leave empty if none)"
-              />
-            </div>
-
-            <button
-              class="btn btn-primary"
-              onclick="extractWatermark()"
-              id="extractBtn"
-            >
-              <span class="btn-text"
-                ><i class="fas fa-unlock"></i> Extract Watermark</span
-              >
-              <span class="btn-loading hidden"
-                ><i class="fas fa-spinner fa-spin"></i> Extracting...</span
-              >
-            </button>
-
-            <!-- Progress Bar -->
-            <div class="progress-container" id="extractProgress">
-              <div class="progress-bar" id="extractProgressBar"></div>
-            </div>
-            <div class="progress-text" id="extractProgressText"></div>
-
-            <div id="extractedResult" class="result-box hidden" role="alert">
-              <div class="result-header">
-                <div class="result-icon">
-                  <i class="fas fa-check-circle"></i>
+                <!-- Progress Bar -->
+                <div class="progress-container" id="embedProgress">
+                    <div class="progress-bar" id="embedProgressBar"></div>
                 </div>
-                <h3>Extracted Watermark:</h3>
-              </div>
-              <p id="extractedText"></p>
-              <button
-                class="btn btn-secondary copy-btn"
-                id="copyWatermark"
-                title="Copy to Clipboard"
-              >
-                <i class="fas fa-copy"></i> Copy
-              </button>
-            </div>
+                <div class="progress-text" id="embedProgressText"></div>
 
-            <div
-              id="extractImagePreview"
-              class="image-box hidden"
-              style="margin-top: 30px"
-            >
-              <h3><i class="fas fa-image"></i> Uploaded Image</h3>
-              <img id="extractPreviewImage" src="" alt="Extract Preview" />
-            </div>
-          </div>
-        </div>
-        <!-- Close main-card -->
-      </section>
-
-      <!-- UPDATED: Real-World Applications Section -->
-      <section id="learn" class="learn-section">
-        <h2 data-scroll="fade-up">
-          <i class="fas fa-code"></i> Real-World Applications
-        </h2>
-        <div class="info-grid">
-          <div class="info-item" data-scroll="fade-up" data-delay="0.1">
-            <div class="info-icon">
-              <i class="fas fa-palette"></i>
-            </div>
-            <h3>Copyright Protection</h3>
-            <p>
-              Artists and photographers embed their identity into images to
-              prove ownership and prevent unauthorized use of their work.
-            </p>
-          </div>
-          <div class="info-item" data-scroll="fade-up" data-delay="0.2">
-            <div class="info-icon">
-              <i class="fas fa-check-circle"></i>
-            </div>
-            <h3>Content Authentication</h3>
-            <p>
-              News agencies and forensic experts use watermarks to verify that
-              images haven't been tampered with or manipulated.
-            </p>
-          </div>
-          <div class="info-item" data-scroll="fade-up" data-delay="0.3">
-            <div class="info-icon">
-              <i class="fas fa-stethoscope"></i>
-            </div>
-            <h3>Medical Imaging</h3>
-            <p>
-              Patient information and diagnosis data can be embedded in medical
-              scans for secure record-keeping and privacy protection.
-            </p>
-          </div>
-          <div class="info-item" data-scroll="slide-left" data-delay="0.1">
-            <div class="info-icon">
-              <i class="fas fa-film"></i>
-            </div>
-            <h3>Digital Rights Management</h3>
-            <p>
-              Media companies track distribution of movies, music, and e-books
-              to identify unauthorized copies and leaks.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Stats Section - now with wrapper -->
-      <section class="stats-section" data-scroll="fade-up">
-        <div class="stats-grid">
-          <div class="stat-item">
-            <div class="stat-number" data-count="256">0</div>
-            <div class="stat-label">Bit Encryption</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number" data-count="100">0</div>
-            <div class="stat-label">% Invisible</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number" data-count="1000">0</div>
-            <div class="stat-label">Max Characters</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number" data-count="5">0</div>
-            <div class="stat-label">MB Max Size</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Video Demo Section - already has styling, just ensure wrapper -->
-      <section class="video-demo-section slide-up-on-scroll">
-        <div class="circuit-flow"></div>
-        <div class="circuit-flow flow-2"></div>
-        <div class="video-progress-bar"></div>
-        <div class="video-demo-container">
-          <h3 class="video-demo-title">
-            <i class="fas fa-code"></i> The Process
-          </h3>
-          <p class="video-demo-description">
-            See the simple 4-step process to protect your images with invisible
-            watermarks
-          </p>
-
-          <div class="demo-video-frame">
-            <div class="video-steps">
-              <!-- Step 1: Select Image -->
-              <div class="video-step active" data-step="1">
-                <span class="step-number">1</span>
-                <div class="step-visual">
-                  <div class="step-icon"><i class="fas fa-image"></i></div>
+                <!-- Image Comparison -->
+                <div id="imageComparison" class="image-comparison hidden">
+                    <div class="image-box">
+                        <h3><i class="fas fa-camera"></i> Original Image</h3>
+                        <img id="originalImage" src="" alt="Original">
+                    </div>
+                    <div class="image-box">
+                        <h3><i class="fas fa-lock"></i> Watermarked Image</h3>
+                        <div id="watermarkedPlaceholder" class="placeholder">
+                            Watermarked image will appear here
+                        </div>
+                        <img id="watermarkedImage" src="" alt="Watermarked" class="hidden">
+                        <button class="btn btn-success hidden" id="downloadBtn" onclick="downloadImage()"><i class="fas fa-download"></i> Download Watermarked Image</button>
+                    </div>
                 </div>
-                <div class="step-content">
-                  <h4>Select Image</h4>
-                  <p>Upload your JPG or PNG image (max 5MB)</p>
-                </div>
-              </div>
-
-              <!-- Step 2: Enter Watermark -->
-              <div class="video-step" data-step="2">
-                <span class="step-number">2</span>
-                <div class="step-visual">
-                  <div class="step-icon"><i class="fas fa-pen-fancy"></i></div>
-                </div>
-                <div class="step-content">
-                  <h4>Add Watermark</h4>
-                  <p>Enter your text (up to 1000 characters)</p>
-                </div>
-              </div>
-
-              <!-- Step 3: Add Password -->
-              <div class="video-step" data-step="3">
-                <span class="step-number">3</span>
-                <div class="step-visual">
-                  <div class="step-icon"><i class="fas fa-shield-alt"></i></div>
-                </div>
-                <div class="step-content">
-                  <h4>Secure (Optional)</h4>
-                  <p>Add SHA-256 encryption for extra protection</p>
-                </div>
-              </div>
-
-              <!-- Step 4: Generate & Download -->
-              <div class="video-step" data-step="4">
-                <span class="step-number">4</span>
-                <div class="step-visual">
-                  <div class="step-icon">
-                    <i class="fas fa-cloud-download-alt"></i>
-                  </div>
-                </div>
-                <div class="step-content">
-                  <h4>Download</h4>
-                  <p>Get your watermarked image instantly</p>
-                </div>
-              </div>
             </div>
-          </div>
 
-          <div class="video-controls">
-            <div class="progress-track">
-              <div class="progress-fill" style="width: 25%"></div>
+            <!-- Extract Tab -->
+            <div id="extractTab" class="tab-content">
+                <div class="info-box">
+                    <strong><i class="fas fa-info-circle"></i> Info:</strong> Upload the watermarked image to extract the hidden message
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-image"></i> Upload Watermarked Image</label>
+                    <div class="upload-area" onclick="document.getElementById('extractImageInput').click()" style="cursor: pointer; transition: all 0.3s ease;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                        </svg>
+                        <p>Click to upload or drag & drop</p>
+                        <input type="file" id="extractImageInput" accept="image/*" style="display: none;" onchange="handleExtractImageUpload(event)">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="extractPassword"><i class="fas fa-key"></i> Password (If Used)</label>
+                    <input type="password" id="extractPassword" placeholder="Enter password if watermark was encrypted (leave empty if none)">
+                </div>
+
+                <button class="btn btn-primary" onclick="extractWatermark()" id="extractBtn">
+                    <span class="btn-text"><i class="fas fa-unlock"></i> Extract Watermark</span>
+                    <span class="btn-loading hidden"><i class="fas fa-spinner fa-spin"></i> Extracting...</span>
+                </button>
+
+                <!-- Progress Bar -->
+                <div class="progress-container" id="extractProgress">
+                    <div class="progress-bar" id="extractProgressBar"></div>
+                </div>
+                <div class="progress-text" id="extractProgressText"></div>
+
+                <div id="extractedResult" class="result-box hidden" role="alert">
+                    <div class="result-header">
+                        <div class="result-icon"><i class="fas fa-check-circle"></i></div>
+                        <h3>Extracted Watermark:</h3>
+                    </div>
+                    <p id="extractedText"></p>
+                    <button class="btn btn-secondary copy-btn" id="copyWatermark" title="Copy to Clipboard"><i class="fas fa-copy"></i> Copy</button>
+                </div>
+
+                <div id="extractImagePreview" class="image-box hidden" style="margin-top: 30px;">
+                    <h3><i class="fas fa-image"></i> Uploaded Image</h3>
+                    <img id="extractPreviewImage" src="" alt="Extract Preview">
+                </div>
             </div>
-            <div class="progress-dots">
-              <span class="dot active" data-step="1"></span>
-              <span class="dot" data-step="2"></span>
-              <span class="dot" data-step="3"></span>
-              <span class="dot" data-step="4"></span>
+            </div> <!-- Close main-card -->
+        </section>
+
+        <!-- UPDATED: Real-World Applications Section -->
+        <section id="learn" class="learn-section">
+            <h2 data-scroll="fade-up"><i class="fas fa-code"></i> Real-World Applications</h2>
+            <div class="info-grid">
+                <div class="info-item" data-scroll="fade-up" data-delay="0.1">
+                    <div class="info-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Copyright Protection</h3>
+                    <p>Artists and photographers embed their identity into images to prove ownership and prevent unauthorized use of their work.</p>
+                </div>
+                <div class="info-item" data-scroll="fade-up" data-delay="0.2">
+                    <div class="info-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Content Authentication</h3>
+                    <p>News agencies and forensic experts use watermarks to verify that images haven't been tampered with or manipulated.</p>
+                </div>
+                <div class="info-item" data-scroll="fade-up" data-delay="0.3">
+                    <div class="info-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Medical Imaging</h3>
+                    <p>Patient information and diagnosis data can be embedded in medical scans for secure record-keeping and privacy protection.</p>
+                </div>
+                <div class="info-item" data-scroll="slide-left" data-delay="0.1">
+                    <div class="info-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>Digital Rights Management</h3>
+                    <p>Media companies track distribution of movies, music, and e-books to identify unauthorized copies and leaks.</p>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- NEW: LSB Visual Explanation Section -->
-      <section class="lsb-visual-section">
-        <div class="lsb-visual-container">
-          <div class="lsb-image">
-            <img
-              src="assets/images/help.png"
-              alt="LSB Steganography Visualization"
-            />
-          </div>
-          <div class="lsb-content">
-            <h3><i class="fas fa-code"></i> How LSB Steganography Works?</h3>
-            <p>
-              This tool uses
-              <strong>Least Significant Bit (LSB) steganography</strong> to hide
-              your watermark in plain sight.
-            </p>
+        <!-- Stats Section - now with wrapper -->
+        <section class="stats-section" data-scroll="fade-up">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="256">0</div>
+                    <div class="stat-label">Bit Encryption</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="100">0</div>
+                    <div class="stat-label">% Invisible</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="1000">0</div>
+                    <div class="stat-label">Max Characters</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="5">0</div>
+                    <div class="stat-label">MB Max Size</div>
+                </div>
+            </div>
+        </section>
 
-            <ul>
-              <li>
-                <i class="fas fa-check"></i>
-                <span
-                  ><strong>Imperceptible Changes:</strong> Only the last bit of
-                  each color channel is modified, resulting in changes of ±1 in
-                  RGB values (e.g., 128 becomes 127 or 129).</span
-                >
-              </li>
-              <li>
-                <i class="fas fa-check"></i>
-                <span
-                  ><strong>Binary Encoding:</strong> Your watermark text is
-                  converted to binary and distributed across thousands of
-                  pixels.</span
-                >
-              </li>
-              <li>
-                <i class="fas fa-check"></i>
-                <span
-                  ><strong>Length Header:</strong> The first 16 bits store the
-                  message length, allowing perfect reconstruction during
-                  extraction.</span
-                >
-              </li>
-              <li>
-                <i class="fas fa-check"></i>
-                <span
-                  ><strong>Optional Encryption:</strong> Add SHA-256 password
-                  protection to prevent unauthorized extraction.</span
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+        <!-- Video Demo Section - already has styling, just ensure wrapper -->
+        <section class="video-demo-section slide-up-on-scroll">
+            <div class="circuit-flow"></div>
+            <div class="circuit-flow flow-2"></div>
+            <div class="video-progress-bar"></div>
+            <div class="video-demo-container">
+                <h3 class="video-demo-title"><i class="fas fa-code"></i> The Process</h3>
+                <p class="video-demo-description">See the simple 4-step process to protect your images with invisible watermarks</p>
+
+                <div class="demo-video-frame">
+                    <div class="video-steps">
+                        <!-- Step 1: Select Image -->
+                        <div class="video-step active" data-step="1">
+                            <span class="step-number">1</span>
+                            <div class="step-visual">
+                                <div class="step-icon"><i class="fas fa-image"></i></div>
+                            </div>
+                            <div class="step-content">
+                                <h4>Select Image</h4>
+                                <p>Upload your JPG or PNG image (max 5MB)</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Enter Watermark -->
+                        <div class="video-step" data-step="2">
+                            <span class="step-number">2</span>
+                            <div class="step-visual">
+                                <div class="step-icon"><i class="fas fa-pen-fancy"></i></div>
+                            </div>
+                            <div class="step-content">
+                                <h4>Add Watermark</h4>
+                                <p>Enter your text (up to 1000 characters)</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Add Password -->
+                        <div class="video-step" data-step="3">
+                            <span class="step-number">3</span>
+                            <div class="step-visual">
+                                <div class="step-icon"><i class="fas fa-shield-alt"></i></div>
+                            </div>
+                            <div class="step-content">
+                                <h4>Secure (Optional)</h4>
+                                <p>Add SHA-256 encryption for extra protection</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Generate & Download -->
+                        <div class="video-step" data-step="4">
+                            <span class="step-number">4</span>
+                            <div class="step-visual">
+                                <div class="step-icon"><i class="fas fa-cloud-download-alt"></i></div>
+                            </div>
+                            <div class="step-content">
+                                <h4>Download</h4>
+                                <p>Get your watermarked image instantly</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-controls">
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 25%"></div>
+                    </div>
+                    <div class="progress-dots">
+                        <span class="dot active" data-step="1"></span>
+                        <span class="dot" data-step="2"></span>
+                        <span class="dot" data-step="3"></span>
+                        <span class="dot" data-step="4"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: LSB Visual Explanation Section -->
+        <section class="lsb-visual-section">
+            <div class="lsb-visual-container">
+                <div class="lsb-image">
+                    <img src="assets/images/help.png" alt="LSB Steganography Visualization" />
+                </div>
+                <div class="lsb-content">
+                    <h3><i class="fas fa-code"></i> How LSB Steganography Works? </h3>
+                    <p>This tool uses <strong>Least Significant Bit (LSB) steganography</strong> to hide your watermark in plain sight.</p>
+                    
+                    <ul>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span><strong>Imperceptible Changes:</strong> Only the last bit of each color channel is modified, resulting in changes of ±1 in RGB values (e.g., 128 becomes 127 or 129).</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span><strong>Binary Encoding:</strong> Your watermark text is converted to binary and distributed across thousands of pixels.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span><strong>Length Header:</strong> The first 16 bits store the message length, allowing perfect reconstruction during extraction.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span><strong>Optional Encryption:</strong> Add SHA-256 password protection to prevent unauthorized extraction.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        
     </div>
 
     <!-- Footer Placeholder -->
@@ -701,7 +504,7 @@
         }
       })();
     </script>
-
+    
     <script src="js/crypto.js" defer></script>
     <script src="js/performance-fix.js" defer></script>
     <script src="js/ui.js" defer></script>
@@ -713,18 +516,17 @@
 
     <!-- Service Worker Registration -->
     <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", function () {
-          navigator.serviceWorker
-            .register("js/sw.js")
-            .then(function (registration) {
-              console.log("ServiceWorker registration successful");
-            })
-            .catch(function (err) {
-              console.log("ServiceWorker registration failed: ", err);
-            });
-        });
-      }
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('js/sw.js')
+          .then(function(registration) {
+            console.log('ServiceWorker registration successful');
+          })
+          .catch(function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+      });
+    }
     </script>
 
     <!-- Help Button -->
@@ -735,14 +537,14 @@
 
     <!-- Mini How It Works Popup -->
     <div class="mini-how-it-works" id="miniHowItWorks">
-      <button class="mini-close" id="closeMiniHowItWorks">&times;</button>
-      <h4><i class="fas fa-lightbulb"></i> How It Works</h4>
-      <ul>
-        <li>Upload an image</li>
-        <li>Enter watermark text</li>
-        <li>Click Embed or Extract</li>
-        <li>Download the result</li>
-      </ul>
+        <button class="mini-close" id="closeMiniHowItWorks">&times;</button>
+        <h4><i class="fas fa-lightbulb"></i> How It Works</h4>
+        <ul>
+            <li>Upload an image</li>
+            <li>Enter watermark text</li>
+            <li>Click Embed or Extract</li>
+            <li>Download the result</li>
+        </ul>
     </div>
 
     <!-- Scroll Indicator Script -->
@@ -772,5 +574,5 @@
         });
       });
     </script>
-  </body>
+</body>
 </html>
