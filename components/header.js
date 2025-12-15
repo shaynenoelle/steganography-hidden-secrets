@@ -7,7 +7,7 @@
     const headerHTML = `
     <header class="top-header">
         <div class="header-content">
-            <a href="index.html" class="logo-section no-loading" style="text-decoration: none; cursor: pointer;">
+            <a href="steganography.html" class="logo-section no-loading" style="text-decoration: none; cursor: pointer;">
                 <span class="lock-icon"><i class="fas fa-lock"></i></span>
                 <h1 class="logo-title">Hidden Secrets</h1>
             </a>
@@ -16,8 +16,8 @@
             </button>
             <nav class="utility-nav" id="utilityNav">
                 <div class="nav-primary">
-                    <a href="index.html#embed" class="nav-link no-reload" data-page="steganography" data-section="embed"> &lt;/ TOOL&gt;</a>
-                    <a href="index.html#learn" class="nav-link no-reload" data-page="steganography" data-section="learn"> &lt;/ LEARN&gt; </a>
+                    <a href="steganography.html#embed" class="nav-link no-reload" data-page="steganography" data-section="embed"> &lt;/ TOOL&gt;</a>
+                    <a href="steganography.html#learn" class="nav-link no-reload" data-page="steganography" data-section="learn"> &lt;/ LEARN&gt; </a>
                 </div>
                 <div class="nav-secondary">
                     <a href="help.html" class="nav-link no-reload" data-page="help"> &lt;/ HELP&gt;</a>
@@ -53,7 +53,7 @@
                 // Show loading screen before navigation
                 showLoadingScreen();
                 setTimeout(() => {
-                    window.location.href = 'index.html';
+                    window.location.href = 'steganography.html';
                 }, 100);
             });
         }
@@ -77,7 +77,7 @@
                 const currentPage = getCurrentPage();
                 const targetHref = link.getAttribute('href');
                 
-                // If clicking a link on the same page (index.html)
+                // If clicking a link on the same page (steganography.html)
                 if (targetPage === currentPage && currentPage === 'steganography') {
                     e.preventDefault();
                     
@@ -105,7 +105,7 @@
                         highlightActivePage();
                     }
                 } 
-                // If navigating to index.html from another page
+                // If navigating to steganography.html from another page
                 else if (targetPage === 'steganography' && currentPage !== 'steganography') {
                     e.preventDefault();
                     

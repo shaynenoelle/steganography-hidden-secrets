@@ -227,7 +227,7 @@
             footerPlaceholder.innerHTML = footerHTML;
             // CRITICAL: Initialize modals AFTER HTML is injected
             initFooterModals();
-            console.log('Footer injected and modals initialized');
+            console.log('✅ Footer injected and modals initialized');
         }
     }
 
